@@ -13,8 +13,6 @@
 		9C75E5471ADBD22B00A64C02 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C75E5461ADBD22B00A64C02 /* Images.xcassets */; };
 		9C75E54A1ADBD22B00A64C02 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C75E5481ADBD22B00A64C02 /* LaunchScreen.xib */; };
 		9C75E5561ADBD22B00A64C02 /* GhostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75E5551ADBD22B00A64C02 /* GhostTests.swift */; };
-		9C75E5601ADBD36800A64C02 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75E55F1ADBD36800A64C02 /* Dictionary.swift */; };
-		9C75E5621ADBD38A00A64C02 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75E5611ADBD38A00A64C02 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +36,6 @@
 		9C75E54F1ADBD22B00A64C02 /* GhostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GhostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C75E5541ADBD22B00A64C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C75E5551ADBD22B00A64C02 /* GhostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostTests.swift; sourceTree = "<group>"; };
-		9C75E55F1ADBD36800A64C02 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dictionary.swift; path = ../Dictionary.swift; sourceTree = "<group>"; };
-		9C75E5611ADBD38A00A64C02 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +77,12 @@
 		9C75E53C1ADBD22B00A64C02 /* Ghost */ = {
 			isa = PBXGroup;
 			children = (
-				9C75E55F1ADBD36800A64C02 /* Dictionary.swift */,
 				9C75E53F1ADBD22B00A64C02 /* AppDelegate.swift */,
 				9C75E5411ADBD22B00A64C02 /* ViewController.swift */,
 				9C75E5431ADBD22B00A64C02 /* Main.storyboard */,
 				9C75E5461ADBD22B00A64C02 /* Images.xcassets */,
 				9C75E5481ADBD22B00A64C02 /* LaunchScreen.xib */,
 				9C75E53D1ADBD22B00A64C02 /* Supporting Files */,
-				9C75E5611ADBD38A00A64C02 /* Game.swift */,
 			);
 			path = Ghost;
 			sourceTree = "<group>";
@@ -220,8 +214,6 @@
 			files = (
 				9C75E5421ADBD22B00A64C02 /* ViewController.swift in Sources */,
 				9C75E5401ADBD22B00A64C02 /* AppDelegate.swift in Sources */,
-				9C75E5601ADBD36800A64C02 /* Dictionary.swift in Sources */,
-				9C75E5621ADBD38A00A64C02 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
