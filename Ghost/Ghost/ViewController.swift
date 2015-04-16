@@ -10,16 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+    var dict = DictioraryTest(words: "Apple\nApplication\nBever\nBeverly")
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func test()
+    {
+        println(dict.list)
+       let filtered = dict.filter("App")
+        println("\(filtered)")
     }
-
 
 }
 

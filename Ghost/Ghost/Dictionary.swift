@@ -7,3 +7,33 @@
 //
 
 import Foundation
+
+class DictioraryTest
+{
+    var list = [String]()
+    
+    init(words: String)
+    {
+        self.list = split(words) {$0 == "\n"}
+    }
+
+    func filter(subString: String) -> [String]
+    {
+        var dictCopy = self.list
+        let length = subString.utf16Count
+        
+        var subSet = [String]()
+        
+        for word in dictCopy
+        {
+            let index = advance(word.startIndex, length)
+            if word.substringToIndex(index) == subString
+            {
+                subSet.append(word)
+            }
+        }
+        
+        return subSet
+        
+    }
+}
