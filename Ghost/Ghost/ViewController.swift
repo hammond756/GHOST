@@ -10,14 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var dict = DictioraryTest(words: "Apple\nApplication\nBever\nBeverly")
+    var game = Game(dict: DictioraryTest(words: "Apple\nApplication\nBananna\nBathtub\nCat\nCaramel"))
 
-    @IBAction func test()
+    @IBAction func test(sender: UIButton)
     {
-        println(dict.list)
-        dict.filter("App")
-        println("\(dict.subSet)")
+        if let letter = sender.currentTitle
+        {
+            game.guess(letter)
+        }
     }
+
+
 
 }
 

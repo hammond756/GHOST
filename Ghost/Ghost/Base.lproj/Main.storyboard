@@ -16,17 +16,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-r2-aBZ">
-                                <rect key="frame" x="277" y="285" width="37" height="30"/>
-                                <state key="normal" title="TEST">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U36-d8-fp6">
+                                <rect key="frame" x="285" y="323" width="30" height="30"/>
+                                <state key="normal" title="B">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="test" destination="BYZ-38-t0r" eventType="touchUpInside" id="h6O-Wz-ST1"/>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FN0-iF-HAc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z79-G7-XEI">
+                                <rect key="frame" x="323" y="323" width="30" height="30"/>
+                                <state key="normal" title="a">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k6O-GA-dLp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJi-uq-0Dc">
+                                <rect key="frame" x="361" y="323" width="30" height="30"/>
+                                <state key="normal" title="t">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxn-Av-4YS"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Z79-G7-XEI" secondAttribute="centerY" constant="-38" id="5n6-wh-XSV"/>
+                            <constraint firstItem="AJi-uq-0Dc" firstAttribute="leading" secondItem="Z79-G7-XEI" secondAttribute="trailing" constant="8" id="7ba-eL-TRh"/>
+                            <constraint firstAttribute="centerY" secondItem="U36-d8-fp6" secondAttribute="centerY" constant="-38" id="EO7-hy-4EJ"/>
+                            <constraint firstItem="Z79-G7-XEI" firstAttribute="leading" secondItem="U36-d8-fp6" secondAttribute="trailing" constant="8" id="FI1-sc-VmL"/>
+                            <constraint firstAttribute="centerX" secondItem="U36-d8-fp6" secondAttribute="centerX" id="JaW-gw-Faf"/>
+                            <constraint firstAttribute="centerY" secondItem="AJi-uq-0Dc" secondAttribute="centerY" constant="-38" id="URb-rd-dke"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
