@@ -11,29 +11,58 @@ import Foundation
 class DictioraryTest
 {
     var list = [String]()
+    var subSet = [String]()
     
     init(words: String)
     {
         self.list = split(words) {$0 == "\n"}
     }
 
-    func filter(subString: String) -> [String]
+    func filter(subString: String)
     {
-        var dictCopy = self.list
+        var listToInspect = [String]()
+        
+        if self.subSet.count == 0
+        {
+            listToInspect = self.list
+        }
+        else
+        {
+            listToInspect = self.subSet
+        }
+        
+        var subSetCopy = [String]()
         let length = subString.utf16Count
         
-        var subSet = [String]()
-        
-        for word in dictCopy
+        for word in listToInspect
         {
             let index = advance(word.startIndex, length)
-            if word.substringToIndex(index) == subString
+            if word.substringToIndex(index) == subString 
             {
-                subSet.append(word)
+                subSetCopy.append(word)
             }
         }
         
-        return subSet
+        self.subSet = subSetCopy
+    }
+    
+    func count() -> Int
+    {
+        return self.subSet.count
+    }
+    
+    func result() -> String?
+    {
+        if count() == 1
+        {
+            return self.subSet[subSet.startIndex]
+        }
         
+        return nil
+    }
+    
+    func reset()
+    {
+        self.subSet = [String]()
     }
 }

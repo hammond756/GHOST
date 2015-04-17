@@ -15,8 +15,8 @@ class ViewController: UIViewController {
     @IBAction func test()
     {
         println(dict.list)
-       let filtered = dict.filter("App")
-        println("\(filtered)")
+        dict.filter("App")
+        println("\(dict.subSet)")
     }
 
 }
