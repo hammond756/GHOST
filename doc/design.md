@@ -18,7 +18,8 @@
 ![](/doc/screens/ChoosePlayer.png)
 * GameViewController  
 ![](/doc/screens/Game.png)
-* InGameSettingsViewController
+* InGameSettingsViewController  
+![](/doc/screens/InGameSettings.png)
 * WinViewController  
 ![](/doc/screens/Win.png)
 
