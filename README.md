@@ -18,3 +18,20 @@ An iOS app that allows the user to play the game 'Ghost' on his/her phone
  * Save highscores
 * NSSpellChecker (uses built in libraries to spellcheck words)
 
+#### Sketches
+
+###### Gameplay  
+![](/storyboard/GamePlay.png)
+
+###### Choose Player  
+![](/storyboard/ChoosePlayer.png)
+
+###### Home Screen
+![](/storyboard/HomeScreen.png)
+
+###### Replay after game has finished
+![](/storyboard/ReplayView.png)
+
+###### In game settings (by touching menu icon in top right)
+![](/storyboard/InGameSettings.png)
+
