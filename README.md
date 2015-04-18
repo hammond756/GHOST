@@ -2,7 +2,7 @@
 An iOS app that allows the user to play the game 'Ghost' on his/her phone
 
 #### Features:
-* Allow 2 to 6 player to play 'Ghost'
+* Allow 2 players to play 'Ghost'
  * In Dutch and English
  * Start new game or resume
  * Saves players' names/profiles
