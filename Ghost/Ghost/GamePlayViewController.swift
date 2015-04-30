@@ -40,7 +40,7 @@ class GamePlayViewController: UIViewController {
         }
         
         // update the wordfragment
-        wordLabel.text = game.currentWord
+        wordLabel.text = game.currentWord.capitalizedString
         
         // clear input field
         inputField.text = ""
