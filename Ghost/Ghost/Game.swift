@@ -10,29 +10,33 @@ import Foundation
 
 class Game
 {
-    var dictionary = DictioraryTest(words: "")
+    var dictionary: DictioraryTest
+    
+    var currentWord = ""
+    
+    var player1: String = ""
+    
+    var player2: String = ""
     
     init(dict: DictioraryTest)
     {
         dictionary = dict
     }
     
-    var currentWord = ""
-    
+    // method that ads the guessed letter to the current word and checks  the dictionary
     func guess (letter: String) -> String?
     {
-        if letter.utf16Count > 1
+        // only accepts single character
+        if count(letter) > 1
         {
             return nil
         }
         
+        // extend wordfragment and filter the dictionary
         currentWord = currentWord + letter
-        dictionary.filter(currentWord)
+        dictionary.filter(currentWord.lowercaseString)
         
-        println(dictionary.list)
-        
-        println(dictionary.subSet)
-        
+        //
         if let result = dictionary.result()
         {
             return result
@@ -43,20 +47,15 @@ class Game
     
     func turn() -> Bool
     {
-        if currentWord.utf16Count % 2 == 0
-        {
-            return true
-        }
-
-        return false
-
+        return count(currentWord) % 2 == 0
     }
     
     func ended() -> Bool
     {
+        let minlength = 4
         
         let subStringNotInDict = dictionary.subSet.count == 0
-        let completedWord = contains(dictionary.subSet, currentWord)
+        let completedWord = contains(dictionary.subSet, currentWord) && count(currentWord) >= minlength
         
         if subStringNotInDict || completedWord
         {
@@ -68,6 +67,6 @@ class Game
     
     func winner() -> Bool
     {
-        return !turn()
+        return turn()
     }
 }

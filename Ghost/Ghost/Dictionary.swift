@@ -10,47 +10,38 @@ import Foundation
 
 class DictioraryTest
 {
-    var list = [String]()
+    // string arrays that will store the dictionary and the filtered dictionary
+    var dict = [String]()
     var subSet = [String]()
     
-    init(words: String)
+    // textfiles with english and dutch dictionaries
+    let englishDict = String(contentsOfFile: "/Users/Aron/GHOST/english", encoding: NSUTF8StringEncoding, error: nil)
+    let dutchDict = String(contentsOfFile: "/Users/Aron/GHOST/dutch", encoding: NSUTF8StringEncoding, error: nil)
+    
+    // choose language in initializer
+    init(language: String)
     {
-        self.list = split(words) {$0 == "\n"}
-    }
-
-    func filter(subString: String)
-    {
-        var listToInspect = [String]()
-        
-        if self.subSet.count == 0
+        switch language
         {
-            listToInspect = self.list
+        case "dutch": self.dict = split(dutchDict!) {$0 == "\n"}
+        case "english": self.dict = split(englishDict!) {$0 == "\n"}
+        default: self.dict = split(dutchDict!) {$0 == "\n"}
         }
-        else
-        {
-            listToInspect = self.subSet
-        }
-        
-        var subSetCopy = [String]()
-        let length = subString.utf16Count
-        
-        for word in listToInspect
-        {
-            let index = advance(word.startIndex, length)
-            if word.substringToIndex(index) == subString 
-            {
-                subSetCopy.append(word)
-            }
-        }
-        
-        self.subSet = subSetCopy
     }
     
+    // save words with prefix in the subSet
+    func filter(subString: String)
+    {
+        subSet = dict.filter() { $0.hasPrefix(subString) }
+    }
+    
+    // return the size of the subSet
     func count() -> Int
     {
         return self.subSet.count
     }
     
+    // return the last word in the subSet
     func result() -> String?
     {
         if count() == 1
@@ -61,6 +52,7 @@ class DictioraryTest
         return nil
     }
     
+    // clear the subSet
     func reset()
     {
         self.subSet = [String]()
