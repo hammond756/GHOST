@@ -14,10 +14,6 @@ class Game
     
     var currentWord = ""
     
-    var player1: String = ""
-    
-    var player2: String = ""
-    
     init(dict: DictioraryTest)
     {
         dictionary = dict

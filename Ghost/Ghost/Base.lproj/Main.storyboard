@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game Play View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GamePlayViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -75,7 +75,7 @@
         <!--Players-->
         <scene sceneID="AtT-oU-rAc">
             <objects>
-                <viewController id="8o1-eM-07j" sceneMemberID="viewController">
+                <viewController id="8o1-eM-07j" customClass="NewGameViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="58w-GF-ytA"/>
                         <viewControllerLayoutGuide type="bottom" id="Jgq-OY-7oD"/>
@@ -84,13 +84,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jgr-fN-Pjf">
-                                <rect key="frame" x="252" y="248" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jgr-fN-Pjf">
+                                <rect key="frame" x="252" y="292" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P3K-eP-epC">
-                                <rect key="frame" x="252" y="210" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P3K-eP-epC">
+                                <rect key="frame" x="252" y="254" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="dJe-Xx-jIQ"/>
                                 </constraints>
@@ -119,6 +119,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Players" id="5Bc-Wi-aOD"/>
+                    <connections>
+                        <outlet property="player1Field" destination="P3K-eP-epC" id="d8i-Hy-rAj"/>
+                        <outlet property="player2Field" destination="Jgr-fN-Pjf" id="z9b-od-5KU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KdO-Dn-vQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

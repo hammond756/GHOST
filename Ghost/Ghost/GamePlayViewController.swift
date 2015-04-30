@@ -8,8 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GamePlayViewController: UIViewController {
     
+    // make sure the playerLabel is correct on the first turn
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        playerLabel.text = player1
+        
+    }
     // link outlets in the storyboard
     @IBOutlet weak var inputField: UITextField!
     @IBOutlet weak var wordLabel: UILabel!
@@ -17,16 +24,19 @@ class ViewController: UIViewController {
     
     var game = Game(dict: DictioraryTest(language: "english"))
     
+    var player1: String = ""
+    var player2: String = ""
+    
     func updateScreen()
     {
         // change the playerLabel to the current player
         if game.turn()
         {
-            playerLabel.text = "Player 1"
+            playerLabel.text = player1
         }
         else
         {
-            playerLabel.text = "Player 2"
+            playerLabel.text = player2
         }
         
         // update the wordfragment
@@ -51,11 +61,11 @@ class ViewController: UIViewController {
             {
                 if game.winner()
                 {
-                    println("Player 1 wins!")
+                    println(player1 + " wins!")
                 }
                 else
                 {
-                    println("Player 2 wins!")
+                    println(player2 + " wins!")
                 }
             }
         }
