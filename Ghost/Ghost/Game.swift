@@ -51,14 +51,9 @@ class Game
         let minlength = 4
         
         let subStringNotInDict = dictionary.subSet.count == 0
-        let completedWord = contains(dictionary.subSet, currentWord) && count(currentWord) >= minlength
+        let completedWord = contains(dictionary.dict, currentWord.lowercaseString) && count(currentWord) >= minlength
         
-        if subStringNotInDict || completedWord
-        {
-            return true
-        }
-        
-        return false
+        return subStringNotInDict || completedWord
     }
     
     func winner() -> Bool
