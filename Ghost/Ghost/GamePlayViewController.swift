@@ -55,6 +55,26 @@ class GamePlayViewController: UIViewController {
         inputField.text = ""
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        var destination = segue.destinationViewController as? UIViewController
+        if let fgvc = destination as? FinshedGameViewController
+        {
+            if let identifier = segue.identifier
+            {
+                switch identifier
+                {
+                case "P1 Wins":
+                    fgvc.winner = player1
+                case "P2 Wins":
+                    fgvc.winner = player2
+                default:
+                    break
+                }
+            }
+        }
+    }
+    
     @IBAction func playLetter()
     {
         if let input = inputField.text
@@ -70,11 +90,11 @@ class GamePlayViewController: UIViewController {
             {
                 if game.winner()
                 {
-                    println(player1 + " wins!")
+                    performSegueWithIdentifier("P1 Wins", sender: nil)
                 }
                 else
                 {
-                    println(player2 + " wins!")
+                    performSegueWithIdentifier("P2 Wins", sender: nil)
                 }
             }
         }

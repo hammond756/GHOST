@@ -57,11 +57,13 @@
                     <connections>
                         <outlet property="inputField" destination="T6g-lz-01h" id="mgX-z8-PS0"/>
                         <outlet property="wordLabel" destination="QlF-6r-i9w" id="hxF-95-C9V"/>
+                        <segue destination="ZpG-SR-egG" kind="show" identifier="P1 Won" id="5SP-8p-Mzc"/>
+                        <segue destination="ZpG-SR-egG" kind="show" identifier="P2 Wins" id="7lz-Ay-Oe2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1574" y="64"/>
+            <point key="canvasLocation" x="1699" y="351"/>
         </scene>
         <!--Players-->
         <scene sceneID="AtT-oU-rAc">
@@ -122,6 +124,52 @@
             </objects>
             <point key="canvasLocation" x="951" y="64"/>
         </scene>
+        <!--Finshed Game View Controller-->
+        <scene sceneID="dzy-1k-VKC">
+            <objects>
+                <viewController id="ZpG-SR-egG" customClass="FinshedGameViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DhV-il-bmC"/>
+                        <viewControllerLayoutGuide type="bottom" id="BZJ-uq-Tbj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3fc-tW-taE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea6-aX-cGC">
+                                <rect key="frame" x="226" y="208" width="148" height="52"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <color key="textColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Betty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUM-fg-72P">
+                                <rect key="frame" x="226" y="268" width="148" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="9AQ-2N-LUy"/>
+                                    <constraint firstAttribute="width" constant="148" id="cMN-oe-8ak"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="aUM-fg-72P" secondAttribute="centerY" constant="0.5" id="iQY-2i-JgB"/>
+                            <constraint firstItem="aUM-fg-72P" firstAttribute="trailing" secondItem="Ea6-aX-cGC" secondAttribute="trailing" id="mlw-Oy-xOJ"/>
+                            <constraint firstItem="aUM-fg-72P" firstAttribute="top" secondItem="Ea6-aX-cGC" secondAttribute="bottom" constant="8" symbolic="YES" id="paZ-zu-oOh"/>
+                            <constraint firstItem="aUM-fg-72P" firstAttribute="centerX" secondItem="3fc-tW-taE" secondAttribute="centerX" id="tD2-de-TIY"/>
+                            <constraint firstItem="aUM-fg-72P" firstAttribute="leading" secondItem="Ea6-aX-cGC" secondAttribute="leading" id="tEn-VV-YgA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="winnerLabel" destination="aUM-fg-72P" id="Q5O-4R-gDm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YcF-ny-xz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="912"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="QU8-26-2a3">
             <objects>
@@ -139,4 +187,7 @@
             <point key="canvasLocation" x="326" y="64"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7lz-Ay-Oe2"/>
+    </inferredMetricsTieBreakers>
 </document>
