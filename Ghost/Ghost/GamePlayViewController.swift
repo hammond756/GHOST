@@ -10,16 +10,23 @@ import UIKit
 
 class GamePlayViewController: UIViewController {
     
-    // make sure the playerLabel is correct on the first turn
+    // make sure the title in the UINavigationBar is correct on the first turn
     override func viewDidLoad() {
         super.viewDidLoad()
-        playerLabel.text = player1
+        
+        if game.turn()
+        {
+            self.title = player1
+        }
+        else
+        {
+            self.title = player2
+        }
     }
     
     // link outlets in the storyboard
     @IBOutlet weak var inputField: UITextField!
     @IBOutlet weak var wordLabel: UILabel!
-    @IBOutlet weak var playerLabel: UILabel!
     
     var game = Game(dict: DictioraryTest(language: "english"))
     
@@ -27,16 +34,18 @@ class GamePlayViewController: UIViewController {
     var player1: String = ""
     var player2: String = ""
     
+    var navBar: UINavigationBar = UINavigationBar()
+    
     func updateScreen()
     {
-        // change the playerLabel to the current player
+        // change the UINavigationBar title to the current player
         if game.turn()
         {
-            playerLabel.text = player1
+            self.title = player1
         }
         else
         {
-            playerLabel.text = player2
+            self.title = player2
         }
         
         // update the wordfragment
