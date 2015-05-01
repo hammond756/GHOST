@@ -13,10 +13,9 @@ class GamePlayViewController: UIViewController {
     // make sure the playerLabel is correct on the first turn
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         playerLabel.text = player1
-        
     }
+    
     // link outlets in the storyboard
     @IBOutlet weak var inputField: UITextField!
     @IBOutlet weak var wordLabel: UILabel!
@@ -24,6 +23,7 @@ class GamePlayViewController: UIViewController {
     
     var game = Game(dict: DictioraryTest(language: "english"))
     
+    // variables to store player names
     var player1: String = ""
     var player2: String = ""
     
