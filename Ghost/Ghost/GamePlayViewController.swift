@@ -16,11 +16,11 @@ class GamePlayViewController: UIViewController {
         
         if game.turn()
         {
-            self.title = player1
+            self.title = game.player1
         }
         else
         {
-            self.title = player2
+            self.title = game.player2
         }
     }
     
@@ -28,11 +28,7 @@ class GamePlayViewController: UIViewController {
     @IBOutlet weak var inputField: UITextField!
     @IBOutlet weak var wordLabel: UILabel!
     
-    var game = Game(dict: DictioraryTest(language: "english"))
-    
-    // variables to store player names
-    var player1: String = ""
-    var player2: String = ""
+    var game = Game.sharedInstance
     
     var navBar: UINavigationBar = UINavigationBar()
     
@@ -41,11 +37,11 @@ class GamePlayViewController: UIViewController {
         // change the UINavigationBar title to the current player
         if game.turn()
         {
-            self.title = player1
+            self.title = game.player1
         }
         else
         {
-            self.title = player2
+            self.title = game.player2
         }
         
         // update the wordfragment
@@ -55,25 +51,24 @@ class GamePlayViewController: UIViewController {
         inputField.text = ""
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        var destination = segue.destinationViewController as? UIViewController
-        if let fgvc = destination as? FinshedGameViewController
-        {
-            if let identifier = segue.identifier
-            {
-                switch identifier
-                {
-                case "P1 Wins":
-                    fgvc.winner = player1
-                case "P2 Wins":
-                    fgvc.winner = player2
-                default:
-                    break
-                }
-            }
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+//    {
+//        if let fgvc = segue.destinationViewController as? FinshedGameViewController
+//        {
+//            if let identifier = segue.identifier
+//            {
+//                switch identifier
+//                {
+//                case "P1 Wins":
+//                    fgvc.winner = player1
+//                case "P2 Wins":
+//                    fgvc.winner = player2
+//                default:
+//                    break
+//                }
+//            }
+//        }
+//    }
     
     @IBAction func playLetter()
     {
@@ -88,14 +83,15 @@ class GamePlayViewController: UIViewController {
             // print winner in console (until handled by a view)
             if game.ended()
             {
-                if game.winner()
-                {
-                    performSegueWithIdentifier("P1 Wins", sender: nil)
-                }
-                else
-                {
-                    performSegueWithIdentifier("P2 Wins", sender: nil)
-                }
+//                if game.winner()
+//                {
+//                    performSegueWithIdentifier("P1 Wins", sender: nil)
+//                }
+//                else
+//                {
+//                    performSegueWithIdentifier("P2 Wins", sender: nil)
+//                }
+                performSegueWithIdentifier("Game Ended", sender: self)
             }
         }
     }

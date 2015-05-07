@@ -10,14 +10,40 @@ import Foundation
 
 class Game
 {
-    var dictionary: DictioraryTest
+    // pattern that allows the game instance to be shared between all controllers
+    // source: http://anthon.io/how-to-share-data-between-view-controllers-in-swift/
+    class var sharedInstance: Game
+    {
+        struct Static {
+            static var instance: Game?
+            static var token: dispatch_once_t = 0
+        }
+        
+        dispatch_once(&Static.token) {
+            Static.instance = Game()
+        }
+        
+        return Static.instance!
+    }
+    
+    var dictionary = DictioraryTest(language: "english")
     
     var currentWord = ""
     
-    init(dict: DictioraryTest)
-    {
-        dictionary = dict
+    var player1 = ""
+    var player2 = ""
+    
+    var isFresh: Bool {
+        get {
+            return (player1 == "" && player2 == "")
+        }
     }
+    
+//    init(dict: DictioraryTest)
+//    {
+//        dictionary = dict
+//    }
+//    
     
     // method that ads the guessed letter to the current word and checks  the dictionary
     func guess (letter: String) -> String?
@@ -59,5 +85,12 @@ class Game
     func winner() -> Bool
     {
         return turn()
+    }
+    
+    func reset()
+    {
+        dictionary.reset()
+        player1 = ""
+        player2 = ""
     }
 }

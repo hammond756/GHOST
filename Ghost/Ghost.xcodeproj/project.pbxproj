@@ -10,6 +10,8 @@
 		9C6544181AF2850800DB4951 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6544171AF2850800DB4951 /* NewGameViewController.swift */; };
 		9C65441A1AF3A04700DB4951 /* FinshedGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6544191AF3A04700DB4951 /* FinshedGameViewController.swift */; };
 		9C6544201AFBB3E100DB4951 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65441F1AFBB3E100DB4951 /* HomePageViewController.swift */; };
+		9C6544221AFBC59900DB4951 /* ChoosePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6544211AFBC59900DB4951 /* ChoosePlayerViewController.swift */; };
+		9C6544241AFBC9C700DB4951 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6544231AFBC9C700DB4951 /* Player.swift */; };
 		9C75E5781ADBD64600A64C02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75E5771ADBD64600A64C02 /* AppDelegate.swift */; };
 		9C75E57A1ADBD64600A64C02 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75E5791ADBD64600A64C02 /* GamePlayViewController.swift */; };
 		9C75E57D1ADBD64600A64C02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C75E57B1ADBD64600A64C02 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 		9C6544171AF2850800DB4951 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = ../NewGameViewController.swift; sourceTree = "<group>"; };
 		9C6544191AF3A04700DB4951 /* FinshedGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinshedGameViewController.swift; sourceTree = "<group>"; };
 		9C65441F1AFBB3E100DB4951 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		9C6544211AFBC59900DB4951 /* ChoosePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePlayerViewController.swift; sourceTree = "<group>"; };
+		9C6544231AFBC9C700DB4951 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		9C75E5721ADBD64600A64C02 /* Ghost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C75E5761ADBD64600A64C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C75E5771ADBD64600A64C02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,11 +91,13 @@
 		9C75E5741ADBD64600A64C02 /* Ghost */ = {
 			isa = PBXGroup;
 			children = (
+				9C65441F1AFBB3E100DB4951 /* HomePageViewController.swift */,
 				9C6544171AF2850800DB4951 /* NewGameViewController.swift */,
 				9C75E5791ADBD64600A64C02 /* GamePlayViewController.swift */,
-				9C75E57B1ADBD64600A64C02 /* Main.storyboard */,
-				9C65441F1AFBB3E100DB4951 /* HomePageViewController.swift */,
 				9C6544191AF3A04700DB4951 /* FinshedGameViewController.swift */,
+				9C75E57B1ADBD64600A64C02 /* Main.storyboard */,
+				9C6544211AFBC59900DB4951 /* ChoosePlayerViewController.swift */,
+				9C6544231AFBC9C700DB4951 /* Player.swift */,
 				9C75E5751ADBD64600A64C02 /* Supporting Files */,
 				9C75E5971ADBD65A00A64C02 /* Dictionary.swift */,
 				9C75E5991ADBD66400A64C02 /* Game.swift */,
@@ -227,12 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C6544221AFBC59900DB4951 /* ChoosePlayerViewController.swift in Sources */,
 				9C65441A1AF3A04700DB4951 /* FinshedGameViewController.swift in Sources */,
 				9C6544201AFBB3E100DB4951 /* HomePageViewController.swift in Sources */,
 				9C75E57A1ADBD64600A64C02 /* GamePlayViewController.swift in Sources */,
 				9C75E5781ADBD64600A64C02 /* AppDelegate.swift in Sources */,
 				9C6544181AF2850800DB4951 /* NewGameViewController.swift in Sources */,
 				9C75E5981ADBD65A00A64C02 /* Dictionary.swift in Sources */,
+				9C6544241AFBC9C700DB4951 /* Player.swift in Sources */,
 				9C75E59A1ADBD66400A64C02 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

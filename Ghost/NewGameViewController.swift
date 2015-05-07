@@ -10,23 +10,64 @@ import UIKit
 
 class NewGameViewController: UIViewController {
     
-    @IBOutlet weak var player1Field: UITextField!
-    @IBOutlet weak var player2Field: UITextField!
+    @IBOutlet weak var player1Label: UILabel!
+    @IBOutlet weak var player2Label: UILabel!
+    
+    var game = Game.sharedInstance
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if game.player1 == ""
+        {
+            player1Label.text = "Player 1"
+            player1Label.alpha = 0.3
+        }
+        else
+        {
+            player1Label.text = game.player1
+            player1Label.alpha = 1.0
+        }
+        if game.player2 == ""
+        {
+            player2Label.text = "Player 2"
+            player2Label.alpha = 0.3
+        }
+        else
+        {
+            player2Label.text = game.player2
+            player2Label.alpha = 0.3
+        }
+        
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let gvc = segue.destinationViewController as? GamePlayViewController
+//        if let gvc = segue.destinationViewController as? GamePlayViewController
+//        {
+//            if let identifier = segue.identifier
+//            {
+//                switch identifier
+//                {
+//                case "Start Game":
+//                    gvc.player1 = player1Label.text!
+//                    gvc.player2 = player2Label.text!
+//                default:
+//                    break
+//                }
+//            }
+//        }
+        if let cpvc = segue.destinationViewController as? ChoosePlayerViewController
         {
             if let identifier = segue.identifier
             {
                 switch identifier
                 {
-                case "Start Game":
-                    gvc.player1 = player1Field.text!
-                    gvc.player2 = player2Field.text!
-                default:
-                    break
+                case "Choose Player 1": cpvc.title = "Player 1"
+                case "Choose Player 2": cpvc.title = "Player 2"
+                default: break
                 }
             }
         }
     }
+    
 }

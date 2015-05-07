@@ -12,12 +12,20 @@ class FinshedGameViewController: UIViewController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
-        winnerLabel.text = winner
+        
+        if game.winner()
+        {
+            winnerLabel.text = game.player1
+        }
+        else
+        {
+            winnerLabel.text = game.player2
+        }
     }
     
-    @IBOutlet weak var winnerLabel: UILabel!
+    var game = Game.sharedInstance
     
-    var winner = ""
+    @IBOutlet weak var winnerLabel: UILabel!
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var destination = segue.destinationViewController as? UIViewController
@@ -29,6 +37,7 @@ class FinshedGameViewController: UIViewController
                 switch identifier
                 {
                 case "Return To Homescreen":
+                    game.reset()
                     println("Quit")
                 case "Show Highscores":
                     println("Highscores")
