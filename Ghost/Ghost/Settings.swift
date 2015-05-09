@@ -26,6 +26,7 @@ class Settings
         return Static.instance!
     }
     
+    // source: http://www.techotopia.com/index.php/IOS_8_Data_Persistence_using_Archiving_and_Swift
     init()
     {
         let fileManager = NSFileManager.defaultManager()
