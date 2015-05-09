@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct Player {
+class Player: NSObject {
+    
+    init(name: String)
+    {
+        self.name = name
+        score = 0
+    }
+    
     let name: String
     var score: Int
 }

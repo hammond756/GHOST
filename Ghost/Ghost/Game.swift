@@ -10,7 +10,7 @@ import Foundation
 
 class Game
 {
-    // pattern that allows the game instance to be shared between all controllers
+    // singleton pattern that allows the game instance to be shared between all controllers
     // source: http://anthon.io/how-to-share-data-between-view-controllers-in-swift/
     class var sharedInstance: Game
     {

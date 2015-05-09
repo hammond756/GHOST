@@ -20,6 +20,8 @@
 		9C75E58E1ADBD64600A64C02 /* GhostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75E58D1ADBD64600A64C02 /* GhostTests.swift */; };
 		9C75E5981ADBD65A00A64C02 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75E5971ADBD65A00A64C02 /* Dictionary.swift */; };
 		9C75E59A1ADBD66400A64C02 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75E5991ADBD66400A64C02 /* Game.swift */; };
+		9C77AB691AFE3B2E00DDD404 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C77AB681AFE3B2E00DDD404 /* Settings.swift */; };
+		9C77AB6B1AFE449600DDD404 /* AddPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C77AB6A1AFE449600DDD404 /* AddPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		9C75E58D1ADBD64600A64C02 /* GhostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostTests.swift; sourceTree = "<group>"; };
 		9C75E5971ADBD65A00A64C02 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9C75E5991ADBD66400A64C02 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		9C77AB681AFE3B2E00DDD404 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		9C77AB6A1AFE449600DDD404 /* AddPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +100,13 @@
 				9C75E5791ADBD64600A64C02 /* GamePlayViewController.swift */,
 				9C6544191AF3A04700DB4951 /* FinshedGameViewController.swift */,
 				9C75E57B1ADBD64600A64C02 /* Main.storyboard */,
+				9C77AB6A1AFE449600DDD404 /* AddPlayerViewController.swift */,
 				9C6544211AFBC59900DB4951 /* ChoosePlayerViewController.swift */,
 				9C6544231AFBC9C700DB4951 /* Player.swift */,
 				9C75E5751ADBD64600A64C02 /* Supporting Files */,
 				9C75E5971ADBD65A00A64C02 /* Dictionary.swift */,
 				9C75E5991ADBD66400A64C02 /* Game.swift */,
+				9C77AB681AFE3B2E00DDD404 /* Settings.swift */,
 			);
 			path = Ghost;
 			sourceTree = "<group>";
@@ -237,8 +243,10 @@
 				9C65441A1AF3A04700DB4951 /* FinshedGameViewController.swift in Sources */,
 				9C6544201AFBB3E100DB4951 /* HomePageViewController.swift in Sources */,
 				9C75E57A1ADBD64600A64C02 /* GamePlayViewController.swift in Sources */,
+				9C77AB691AFE3B2E00DDD404 /* Settings.swift in Sources */,
 				9C75E5781ADBD64600A64C02 /* AppDelegate.swift in Sources */,
 				9C6544181AF2850800DB4951 /* NewGameViewController.swift in Sources */,
+				9C77AB6B1AFE449600DDD404 /* AddPlayerViewController.swift in Sources */,
 				9C75E5981ADBD65A00A64C02 /* Dictionary.swift in Sources */,
 				9C6544241AFBC9C700DB4951 /* Player.swift in Sources */,
 				9C75E59A1ADBD66400A64C02 /* Game.swift in Sources */,

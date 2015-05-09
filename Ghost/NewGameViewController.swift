@@ -36,26 +36,12 @@ class NewGameViewController: UIViewController {
         else
         {
             player2Label.text = game.player2
-            player2Label.alpha = 0.3
+            player2Label.alpha = 1.0
         }
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if let gvc = segue.destinationViewController as? GamePlayViewController
-//        {
-//            if let identifier = segue.identifier
-//            {
-//                switch identifier
-//                {
-//                case "Start Game":
-//                    gvc.player1 = player1Label.text!
-//                    gvc.player2 = player2Label.text!
-//                default:
-//                    break
-//                }
-//            }
-//        }
         if let cpvc = segue.destinationViewController as? ChoosePlayerViewController
         {
             if let identifier = segue.identifier

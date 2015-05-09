@@ -42,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="34" id="YQd-5Y-s7X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -95,13 +95,13 @@
                                     <constraint firstAttribute="width" constant="106" id="VUm-VG-3jS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqQ-ab-1P5">
                                 <rect key="frame" x="304" y="343" width="106" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVu-A4-LqD">
@@ -149,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="951" y="64"/>
         </scene>
-        <!--Choose Player View Controller-->
+        <!--Title-->
         <scene sceneID="Zo3-BU-a36">
             <objects>
                 <tableViewController id="wWQ-Fm-kew" customClass="ChoosePlayerViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,7 +166,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zq8-J2-3e7">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -178,10 +178,73 @@
                             <outlet property="delegate" destination="wWQ-Fm-kew" id="dg1-HH-RXy"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="99r-DV-sDU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aig-qG-flX">
+                            <connections>
+                                <action selector="addPlayer:" destination="wWQ-Fm-kew" id="9rO-lL-0Ds"/>
+                                <segue destination="dal-k7-ae2" kind="show" id="Vyq-8w-bkD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgP-xx-E0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="951" y="780"/>
+        </scene>
+        <!--Add Player-->
+        <scene sceneID="0SG-yS-YBK">
+            <objects>
+                <viewController id="dal-k7-ae2" customClass="AddPlayerViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="29i-Dn-kKh"/>
+                        <viewControllerLayoutGuide type="bottom" id="JQM-rM-IhK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RpA-Zm-oEx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQI-ht-jPO">
+                                <rect key="frame" x="394" y="285" width="30" height="30"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addPlayer" destination="dal-k7-ae2" eventType="touchUpInside" id="IfI-uQ-T0A"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4J8-qA-xjM">
+                                <rect key="frame" x="252" y="285" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="pGd-w7-fQ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kQI-ht-jPO" firstAttribute="leading" secondItem="4J8-qA-xjM" secondAttribute="trailing" constant="45" id="81K-mo-M2X"/>
+                            <constraint firstItem="4J8-qA-xjM" firstAttribute="centerX" secondItem="RpA-Zm-oEx" secondAttribute="centerX" id="O7I-iT-Zyl"/>
+                            <constraint firstItem="kQI-ht-jPO" firstAttribute="top" secondItem="4J8-qA-xjM" secondAttribute="top" id="SbC-m2-PVa"/>
+                            <constraint firstItem="4J8-qA-xjM" firstAttribute="centerY" secondItem="RpA-Zm-oEx" secondAttribute="centerY" id="fy9-dG-6Zc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Player" id="WTC-ZM-2nx">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eVq-je-tBc">
+                            <connections>
+                                <action selector="cancel:" destination="dal-k7-ae2" id="gVg-HZ-UuX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameField" destination="4J8-qA-xjM" id="oVl-3x-vRq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mkg-Nh-mXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="780"/>
         </scene>
         <!--Finshed Game View Controller-->
         <scene sceneID="dzy-1k-VKC">
@@ -208,7 +271,7 @@
                                     <constraint firstAttribute="width" constant="148" id="cMN-oe-8ak"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="les-PA-yzG">
@@ -276,7 +339,7 @@
                                     <constraint firstAttribute="width" constant="236" id="IX9-cT-gJg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="62"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83H-dJ-44h">
