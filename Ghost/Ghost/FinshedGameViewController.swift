@@ -15,11 +15,13 @@ class FinshedGameViewController: UIViewController
         
         if game.winner()
         {
-            winnerLabel.text = game.player1
+            winnerLabel.text = game.player1?.name
+            game.player1?.incrementScore()
         }
         else
         {
-            winnerLabel.text = game.player2
+            winnerLabel.text = game.player2?.name
+            game.player2?.incrementScore()
         }
     }
     
@@ -50,7 +52,8 @@ class FinshedGameViewController: UIViewController
         
     }
     
-    @IBAction func returnToHomeScreen() {
+    @IBAction func returnToHomeScreen()
+    {
         performSegueWithIdentifier("Return To Homescreen", sender: self)
     }
     

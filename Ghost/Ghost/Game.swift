@@ -30,12 +30,16 @@ class Game
     
     var currentWord = ""
     
-    var player1 = ""
-    var player2 = ""
+//    var player1 = Player(name: "", score: 0)
+//    var player2 = Player(name: "", score: 0)
+    var player1: Player?
+    var player2: Player?
     
-    var isFresh: Bool {
-        get {
-            return (player1 == "" && player2 == "")
+    var isFresh: Bool
+    {
+        get
+        {
+            return (player1 == nil && player2 == nil)
         }
     }
     
@@ -90,7 +94,7 @@ class Game
     func reset()
     {
         dictionary.reset()
-        player1 = ""
-        player2 = ""
+        player1 = nil
+        player2 = nil
     }
 }

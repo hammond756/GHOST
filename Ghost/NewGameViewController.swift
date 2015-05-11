@@ -18,24 +18,24 @@ class NewGameViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        if game.player1 == ""
+        if game.player1 == nil
         {
             player1Label.text = "Player 1"
             player1Label.alpha = 0.3
         }
         else
         {
-            player1Label.text = game.player1
+            player1Label.text = game.player1?.name
             player1Label.alpha = 1.0
         }
-        if game.player2 == ""
+        if game.player2 == nil
         {
             player2Label.text = "Player 2"
             player2Label.alpha = 0.3
         }
         else
         {
-            player2Label.text = game.player2
+            player2Label.text = game.player2?.name
             player2Label.alpha = 1.0
         }
         

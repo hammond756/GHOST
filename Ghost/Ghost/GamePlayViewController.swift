@@ -16,11 +16,11 @@ class GamePlayViewController: UIViewController {
         
         if game.turn()
         {
-            self.title = game.player1
+            self.title = game.player1.name
         }
         else
         {
-            self.title = game.player2
+            self.title = game.player2.name
         }
     }
     
@@ -37,11 +37,11 @@ class GamePlayViewController: UIViewController {
         // change the UINavigationBar title to the current player
         if game.turn()
         {
-            self.title = game.player1
+            self.title = game.player1?.name
         }
         else
         {
-            self.title = game.player2
+            self.title = game.player2?.name
         }
         
         // update the wordfragment
@@ -50,25 +50,6 @@ class GamePlayViewController: UIViewController {
         // clear input field
         inputField.text = ""
     }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-//    {
-//        if let fgvc = segue.destinationViewController as? FinshedGameViewController
-//        {
-//            if let identifier = segue.identifier
-//            {
-//                switch identifier
-//                {
-//                case "P1 Wins":
-//                    fgvc.winner = player1
-//                case "P2 Wins":
-//                    fgvc.winner = player2
-//                default:
-//                    break
-//                }
-//            }
-//        }
-//    }
     
     @IBAction func playLetter()
     {
@@ -83,14 +64,6 @@ class GamePlayViewController: UIViewController {
             // print winner in console (until handled by a view)
             if game.ended()
             {
-//                if game.winner()
-//                {
-//                    performSegueWithIdentifier("P1 Wins", sender: nil)
-//                }
-//                else
-//                {
-//                    performSegueWithIdentifier("P2 Wins", sender: nil)
-//                }
                 performSegueWithIdentifier("Game Ended", sender: self)
             }
         }

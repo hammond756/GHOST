@@ -40,11 +40,11 @@ class ChoosePlayerViewController: UITableViewController
     {
         if title == "Player 1"
         {
-            game.player1 = settings.players[indexPath.row].name
+            game.player1 = settings.players[indexPath.row]
         }
         else
         {
-            game.player2 = settings.players[indexPath.row].name
+            game.player2 = settings.players[indexPath.row]
         }
         
         navigationController?.popViewControllerAnimated(true)

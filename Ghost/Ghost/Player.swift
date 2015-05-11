@@ -18,4 +18,9 @@ class Player: NSObject
     
     let name: String
     var score: Int
+    
+    func incrementScore()
+    {
+        score++
+    }
 }
