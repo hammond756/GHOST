@@ -18,7 +18,6 @@ class AddPlayerViewController: UIViewController {
     {
         let playerName = nameField.text
         settings.addPlayer(playerName)
-        
         navigationController?.popViewControllerAnimated(true)
     }
 

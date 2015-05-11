@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Player: NSObject {
-    
-    init(name: String)
+class Player: NSObject
+{
+    init(name: String, score: Int)
     {
         self.name = name
-        score = 0
+        self.score = score
     }
     
     let name: String

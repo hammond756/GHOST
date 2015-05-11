@@ -10,51 +10,64 @@ import Foundation
 
 class Settings
 {
-    var dataFilePath: String?
-    
     class var sharedInstance: Settings
     {
-        struct Static {
+        struct Static
+        {
             static var instance: Settings?
             static var token: dispatch_once_t = 0
         }
         
-        dispatch_once(&Static.token) {
+        dispatch_once(&Static.token)
+        {
             Static.instance = Settings()
         }
         
         return Static.instance!
     }
     
-    // source: http://www.techotopia.com/index.php/IOS_8_Data_Persistence_using_Archiving_and_Swift
     init()
     {
-        let fileManager = NSFileManager.defaultManager()
-        let dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        
-        let docsDirectory = dirPaths[0] as! String
-        
-        dataFilePath = docsDirectory.stringByAppendingPathComponent("data.archive")
-        
-        if fileManager.fileExistsAtPath(dataFilePath!)
+        if let playersDict = defaults.dictionaryForKey("Players") as? [String: Int]
         {
-            players = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath!) as! [String] // [Player]
+            convertPlayers(playersDict)
         }
     }
     
-    func savePlayers()
-    {
-        NSKeyedArchiver.archiveRootObject(players, toFile: dataFilePath!)
-    }
+    var playersDict = [String: Int]()
+    var players = [Player]()
+    var defaults = NSUserDefaults.standardUserDefaults()
     
-    // var players = [Player]()
-    var players = [String]()
-    
-    
+    // add player to the list of Player and the dictionary
     func addPlayer(name: String)
     {
-        // var newPlayer = Player(name: name)
-        players.append(name)
-        self.savePlayers()
+        let newPlayer = Player(name: name, score: 0)
+        players.append(newPlayer)
+        playersDict[name] = 0
+        
+        savePlayers()
+    }
+    
+    private func convertPlayers(playersDict: [String: Int])
+    {
+        for (name, score) in playersDict
+        {
+            let tempPlayer = Player(name: name, score: score)
+            players.append(tempPlayer)
+        }
+    }
+    
+    private func savePlayers()
+    {
+        var tempDict = [String: Int]()
+        
+        for player in players
+        {
+            tempDict[player.name] = player.score
+        }
+        
+        playersDict = tempDict
+        
+        defaults.setObject(playersDict, forKey: "Players")
     }
 }

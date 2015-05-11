@@ -30,7 +30,7 @@ class ChoosePlayerViewController: UITableViewController
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Player", forIndexPath: indexPath) as! UITableViewCell
         let player = settings.players[indexPath.row]
         
-        cell.textLabel?.text = player //.name
+        cell.textLabel?.text = player.name
         
         return cell
     }
@@ -40,11 +40,11 @@ class ChoosePlayerViewController: UITableViewController
     {
         if title == "Player 1"
         {
-            game.player1 = settings.players[indexPath.row] //.name
+            game.player1 = settings.players[indexPath.row].name
         }
         else
         {
-            game.player2 = settings.players[indexPath.row] //.name
+            game.player2 = settings.players[indexPath.row].name
         }
         
         navigationController?.popViewControllerAnimated(true)
