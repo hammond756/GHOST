@@ -41,23 +41,26 @@ class DictioraryTest
     
     private func loadTextFiles()
     {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        // source: http://stackoverflow.com/questions/24097826/read-and-write-data-from-text-file
+        // generates paths to the text files, reads them as strings and splits into arrays
         if let dirs = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .AllDomainsMask, true) as? [String]
         {
             let docs = dirs[0]
-            let englishPath = docs.stringByAppendingPathComponent("english.txt")
-            let dutchPath = docs.stringByAppendingPathComponent("dutch.txt")
-            var englishDict = String(contentsOfFile: englishPath, encoding: NSUTF8StringEncoding, error: nil)
-            var dutchDict = String(contentsOfFile: dutchPath, encoding: NSUTF8StringEncoding, error: nil)
-            
-            var dutchArray = split(dutchDict!) {$0 == "\n"}
-            var englishArray = split(englishDict!) {$0 == "\n"}
-            
-            var defaults = NSUserDefaults.standardUserDefaults()
-            
-            defaults.setObject(englishArray, forKey: "English Dictionary")
-            defaults.setObject(dutchArray, forKey: "Dutch Dictionary")
-            
-            
+            let englishPath = NSBundle.mainBundle().pathForResource("english", ofType: "txt")
+            let dutchPath = NSBundle.mainBundle().pathForResource("dutch", ofType: "txt")
+                        
+            if let englishDict = String(contentsOfFile: englishPath!, encoding: NSUTF8StringEncoding, error: nil)
+            {
+                var englishArray = split(englishDict) {$0 == "\n"}
+                defaults.setObject(englishArray, forKey: "English Dictionary")
+            }
+            if let dutchDict = String(contentsOfFile: dutchPath!, encoding: NSUTF8StringEncoding, error: nil)
+            {
+                var dutchArray = split(dutchDict) {$0 == "\n"}
+                defaults.setObject(dutchArray, forKey: "Dutch Dictionary")
+            }
         }
         
     }

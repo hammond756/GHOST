@@ -13,17 +13,24 @@ class HighscoreViewController: UIViewController
     @IBOutlet weak var firstPlace: UILabel!
     @IBOutlet weak var secondPlace: UILabel!
     @IBOutlet weak var thirdPlace: UILabel!
+    @IBOutlet weak var firstPlaceScore: UILabel!
+    @IBOutlet weak var secondPlaceScore: UILabel!
+    @IBOutlet weak var thirdPlaceScore: UILabel!
     
-    let highscores = Highscores()
+    var labels = [(UILabel,UILabel)]()
+    var highscores = Highscores()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         
-        highscores.generate()
+        labels = [(firstPlace, firstPlaceScore), (secondPlace, secondPlaceScore), (thirdPlace, thirdPlaceScore)]
+        let highScoreList = highscores.generate()
         
-        firstPlace.text = highscores.highscoreList[0].name + ": " + String(highscores.highscoreList[0].score)
-        secondPlace.text = highscores.highscoreList[1].name + ": " +      String(highscores.highscoreList[1].score)
-        thirdPlace.text = highscores.highscoreList[2].name + ": " + String(highscores.highscoreList[2].score)
+        for (nameLabel, scoreLabel) in labels
+        {
+            // do something
+        }
     }
     
     

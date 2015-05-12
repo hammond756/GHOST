@@ -87,6 +87,7 @@ class Game
     func reset()
     {
         dictionary.reset()
+        currentWord = ""
         player1 = nil
         player2 = nil
     }

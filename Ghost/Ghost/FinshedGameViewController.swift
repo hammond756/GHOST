@@ -12,7 +12,7 @@ class FinshedGameViewController: UIViewController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
         if game.winner()
         {
@@ -32,6 +32,10 @@ class FinshedGameViewController: UIViewController
     
     @IBOutlet weak var winnerLabel: UILabel!
     
+    @IBAction func homeScreenSegue()
+    {
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        var destination = segue.destinationViewController as? UIViewController
 //        

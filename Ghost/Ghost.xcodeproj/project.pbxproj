@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C5570731B025B00009F5DD0 /* dutch.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C5570711B025B00009F5DD0 /* dutch.txt */; };
+		9C5570741B025B00009F5DD0 /* english.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C5570721B025B00009F5DD0 /* english.txt */; };
 		9C6544181AF2850800DB4951 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6544171AF2850800DB4951 /* NewGameViewController.swift */; };
 		9C65441A1AF3A04700DB4951 /* FinshedGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6544191AF3A04700DB4951 /* FinshedGameViewController.swift */; };
 		9C6544201AFBB3E100DB4951 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65441F1AFBB3E100DB4951 /* HomePageViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C5570711B025B00009F5DD0 /* dutch.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dutch.txt; sourceTree = "<group>"; };
+		9C5570721B025B00009F5DD0 /* english.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = english.txt; sourceTree = "<group>"; };
 		9C6544171AF2850800DB4951 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewGameViewController.swift; path = ../NewGameViewController.swift; sourceTree = "<group>"; };
 		9C6544191AF3A04700DB4951 /* FinshedGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinshedGameViewController.swift; sourceTree = "<group>"; };
 		9C65441F1AFBB3E100DB4951 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		9C75E5741ADBD64600A64C02 /* Ghost */ = {
 			isa = PBXGroup;
 			children = (
+				9C5570711B025B00009F5DD0 /* dutch.txt */,
+				9C5570721B025B00009F5DD0 /* english.txt */,
 				9C65441F1AFBB3E100DB4951 /* HomePageViewController.swift */,
 				9C6544171AF2850800DB4951 /* NewGameViewController.swift */,
 				9C75E5791ADBD64600A64C02 /* GamePlayViewController.swift */,
@@ -226,8 +232,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C75E57D1ADBD64600A64C02 /* Main.storyboard in Resources */,
+				9C5570741B025B00009F5DD0 /* english.txt in Resources */,
 				9C75E5821ADBD64600A64C02 /* LaunchScreen.xib in Resources */,
 				9C75E57F1ADBD64600A64C02 /* Images.xcassets in Resources */,
+				9C5570731B025B00009F5DD0 /* dutch.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
