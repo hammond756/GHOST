@@ -15,6 +15,12 @@ class NewGameViewController: UIViewController {
     
     var game = Game.sharedInstance
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         

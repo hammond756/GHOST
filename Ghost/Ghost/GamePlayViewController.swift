@@ -16,11 +16,11 @@ class GamePlayViewController: UIViewController {
         
         if game.turn()
         {
-            self.title = game.player1.name
+            self.title = game.player1?.name
         }
         else
         {
-            self.title = game.player2.name
+            self.title = game.player2?.name
         }
     }
     

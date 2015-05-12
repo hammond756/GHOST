@@ -14,19 +14,52 @@ class DictioraryTest
     var dict = [String]()
     var subSet = [String]()
     
-    // textfiles with english and dutch dictionaries
-    let englishDict = String(contentsOfFile: "/Users/Aron/GHOST/english", encoding: NSUTF8StringEncoding, error: nil)
-    let dutchDict = String(contentsOfFile: "/Users/Aron/GHOST/dutch", encoding: NSUTF8StringEncoding, error: nil)
-    
-    // choose language in initializer
-    init(language: String)
+    init()
     {
-        switch language
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        // if no default is set, dictionaries have to be loaded in
+        if defaults.stringForKey("Default Language") == nil
         {
-        case "dutch": self.dict = split(dutchDict!) {$0 == "\n"}
-        case "english": self.dict = split(englishDict!) {$0 == "\n"}
-        default: self.dict = split(dutchDict!) {$0 == "\n"}
+            println("initializing")
+            loadTextFiles()
+            defaults.setValue("English", forKey: "Default Language")
         }
+        
+        let defaultLanguage = defaults.stringForKey("Default Language")
+        
+        switch defaultLanguage!
+        {
+        case "English":
+            dict = defaults.objectForKey("English Dictionary") as! [String]
+        case "Dutch":
+            dict = defaults.objectForKey("Dutch Dictionary") as! [String]
+        default:
+            break
+        }
+    }
+    
+    private func loadTextFiles()
+    {
+        if let dirs = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .AllDomainsMask, true) as? [String]
+        {
+            let docs = dirs[0]
+            let englishPath = docs.stringByAppendingPathComponent("english.txt")
+            let dutchPath = docs.stringByAppendingPathComponent("dutch.txt")
+            var englishDict = String(contentsOfFile: englishPath, encoding: NSUTF8StringEncoding, error: nil)
+            var dutchDict = String(contentsOfFile: dutchPath, encoding: NSUTF8StringEncoding, error: nil)
+            
+            var dutchArray = split(dutchDict!) {$0 == "\n"}
+            var englishArray = split(englishDict!) {$0 == "\n"}
+            
+            var defaults = NSUserDefaults.standardUserDefaults()
+            
+            defaults.setObject(englishArray, forKey: "English Dictionary")
+            defaults.setObject(dutchArray, forKey: "Dutch Dictionary")
+            
+            
+        }
+        
     }
     
     // save words with prefix in the subSet

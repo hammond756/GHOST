@@ -37,6 +37,7 @@ class Settings
     var playersDict = [String: Int]()
     var players = [Player]()
     var defaults = NSUserDefaults.standardUserDefaults()
+    let language = "english"
     
     // add player to the list of Player and the dictionary
     func addPlayer(name: String)
@@ -69,5 +70,11 @@ class Settings
         playersDict = tempDict
         
         defaults.setObject(playersDict, forKey: "Players")
+    }
+    
+    // language is string with an uppercase first character
+    func setDefaultLanguage(language: String)
+    {
+        defaults.setValue(language, forKey: "Default Language")
     }
 }

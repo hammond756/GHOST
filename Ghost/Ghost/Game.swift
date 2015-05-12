@@ -26,12 +26,10 @@ class Game
         return Static.instance!
     }
     
-    var dictionary = DictioraryTest(language: "english")
+    var dictionary = DictioraryTest()
     
     var currentWord = ""
     
-//    var player1 = Player(name: "", score: 0)
-//    var player2 = Player(name: "", score: 0)
     var player1: Player?
     var player2: Player?
     
@@ -43,11 +41,6 @@ class Game
         }
     }
     
-//    init(dict: DictioraryTest)
-//    {
-//        dictionary = dict
-//    }
-//    
     
     // method that ads the guessed letter to the current word and checks  the dictionary
     func guess (letter: String) -> String?

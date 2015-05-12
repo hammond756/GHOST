@@ -12,6 +12,7 @@ class FinshedGameViewController: UIViewController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: true)
         
         if game.winner()
         {
@@ -23,38 +24,35 @@ class FinshedGameViewController: UIViewController
             winnerLabel.text = game.player2?.name
             game.player2?.incrementScore()
         }
+        
+        game.reset()
     }
     
     var game = Game.sharedInstance
     
     @IBOutlet weak var winnerLabel: UILabel!
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var destination = segue.destinationViewController as? UIViewController
-        
-        if let ngvc = destination as? NewGameViewController
-        {
-            if let identifier = segue.identifier
-            {
-                switch identifier
-                {
-                case "Return To Homescreen":
-                    game.reset()
-                    println("Quit")
-                case "Show Highscores":
-                    println("Highscores")
-                case "Replay Game":
-                    println("Replay")
-                default: break
-                }
-            }
-        }
-        
-    }
-    
-    @IBAction func returnToHomeScreen()
-    {
-        performSegueWithIdentifier("Return To Homescreen", sender: self)
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        var destination = segue.destinationViewController as? UIViewController
+//        
+//        if let ngvc = destination as? NewGameViewController
+//        {
+//            if let identifier = segue.identifier
+//            {
+//                switch identifier
+//                {
+//                case "Return To Homescreen":
+//                    game.reset()
+//                    println("Quit")
+//                case "Show Highscores":
+//                    println("Highscores")
+//                case "Replay Game":
+//                    println("Replay")
+//                default: break
+//                }
+//            }
+//        }
+//        
+//    }
     
 }

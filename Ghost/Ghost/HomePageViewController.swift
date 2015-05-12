@@ -10,9 +10,11 @@ import UIKit
 
 class HomePageViewController: UIViewController {
     
-    @IBAction func openNewGame()
-    {
-        performSegueWithIdentifier("Open New Game", sender: self)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: false)
     }
     
+    var defaults = NSUserDefaults.standardUserDefaults()
+    var settings = Settings.sharedInstance
 }
