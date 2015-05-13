@@ -85,8 +85,7 @@ class NewGameViewController: UIViewController {
     // maybe try attributed text? conditional on a state
     private func changeHighlightedFlag()
     {
-        let currentLanguage = game.dictionary.getLanguage()
-        switch currentLanguage
+        switch game.dictionary.currentLanguage
         {
         case "english":
             engButton.alpha = 1.0

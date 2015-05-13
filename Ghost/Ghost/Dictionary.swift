@@ -70,10 +70,6 @@ class DictioraryTest
         currentLanguage = language
     }
     
-    func getLanguage() -> String
-    {
-        return currentLanguage
-    }
     // save words with prefix in the subSet
     func filter(subString: String)
     {
