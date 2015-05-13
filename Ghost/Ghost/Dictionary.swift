@@ -19,47 +19,42 @@ class DictioraryTest
         var defaults = NSUserDefaults.standardUserDefaults()
         
         // if no default is set, dictionaries have to be loaded in
+        if defaults.objectForKey("english") == nil
+        {
+            loadTextFile("english")
+        }
+        if defaults.objectForKey("dutch") == nil
+        {
+            loadTextFile("dutch")
+        }
         if defaults.stringForKey("Default Language") == nil
         {
-            println("initializing")
-            loadTextFiles()
-            defaults.setValue("English", forKey: "Default Language")
+            defaults.setValue("english", forKey: "Default Language")
         }
         
         let defaultLanguage = defaults.stringForKey("Default Language")
-        
-        switch defaultLanguage!
-        {
-        case "English":
-            dict = defaults.objectForKey("English Dictionary") as! [String]
-        case "Dutch":
-            dict = defaults.objectForKey("Dutch Dictionary") as! [String]
-        default:
-            break
-        }
+        dict = defaults.objectForKey(defaultLanguage!) as! [String]
     }
     
-    private func loadTextFiles()
+    private func loadTextFile(language: String)
     {
         var defaults = NSUserDefaults.standardUserDefaults()
+        
+        println("Initializing")
         
         // source: http://stackoverflow.com/questions/24097826/read-and-write-data-from-text-file
         // generates paths to the text files, reads them as strings and splits into arrays
         if let dirs = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .AllDomainsMask, true) as? [String]
         {
             let docs = dirs[0]
-            let englishPath = NSBundle.mainBundle().pathForResource("english", ofType: "txt")
-            let dutchPath = NSBundle.mainBundle().pathForResource("dutch", ofType: "txt")
-                        
-            if let englishDict = String(contentsOfFile: englishPath!, encoding: NSUTF8StringEncoding, error: nil)
+            let path = NSBundle.mainBundle().pathForResource(language, ofType: "txt")
+            
+            if let dictString = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
             {
-                var englishArray = split(englishDict) {$0 == "\n"}
-                defaults.setObject(englishArray, forKey: "English Dictionary")
-            }
-            if let dutchDict = String(contentsOfFile: dutchPath!, encoding: NSUTF8StringEncoding, error: nil)
-            {
-                var dutchArray = split(dutchDict) {$0 == "\n"}
-                defaults.setObject(dutchArray, forKey: "Dutch Dictionary")
+                println("Start split")
+                var dictArray = split(dictString) {$0 == "\n"}
+                println("Finished split")
+                defaults.setObject(dictArray, forKey: language)
             }
         }
         

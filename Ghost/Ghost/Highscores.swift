@@ -11,12 +11,13 @@ import Foundation
 class Highscores
 {
     var settings = Settings.sharedInstance
+    var highScoreList = [Player]()
     
-    func generate() -> [Player]
+    init()
     {
         var playersCopy = settings.players
         playersCopy.sort({$0.score > $1.score})
-        return playersCopy
+        highScoreList = playersCopy
     }
         
 }

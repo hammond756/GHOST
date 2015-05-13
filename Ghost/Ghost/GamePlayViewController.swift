@@ -22,6 +22,8 @@ class GamePlayViewController: UIViewController {
         {
             self.title = game.player2?.name
         }
+        
+        println("\(game.dictionary.dict.count)")
     }
     
     // link outlets in the storyboard

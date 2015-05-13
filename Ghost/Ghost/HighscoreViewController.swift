@@ -25,11 +25,20 @@ class HighscoreViewController: UIViewController
         navigationController?.setNavigationBarHidden(false, animated: false)
         
         labels = [(firstPlace, firstPlaceScore), (secondPlace, secondPlaceScore), (thirdPlace, thirdPlaceScore)]
-        let highScoreList = highscores.generate()
+        let size = highscores.highScoreList.count
         
-        for (nameLabel, scoreLabel) in labels
+        for (i,(nameLabel, scoreLabel)) in enumerate(labels)
         {
-            // do something
+            if i < size
+            {
+                nameLabel.text = highscores.highScoreList[i].name
+                scoreLabel.text = String(highscores.highScoreList[i].score)
+            }
+            else
+            {
+                nameLabel.text = nil
+                scoreLabel.text = nil
+            }
         }
     }
     

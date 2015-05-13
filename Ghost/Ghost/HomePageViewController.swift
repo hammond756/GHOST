@@ -12,9 +12,6 @@ class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(navigationController?.navigationBarHidden == false, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-    var defaults = NSUserDefaults.standardUserDefaults()
-    var settings = Settings.sharedInstance
 }
