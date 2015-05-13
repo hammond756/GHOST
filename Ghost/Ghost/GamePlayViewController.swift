@@ -22,8 +22,6 @@ class GamePlayViewController: UIViewController {
         {
             self.title = game.player2?.name
         }
-        
-        println("\(game.dictionary.dict.count)")
     }
     
     // link outlets in the storyboard
@@ -63,7 +61,6 @@ class GamePlayViewController: UIViewController {
             // update the view
             updateScreen()
             
-            // print winner in console (until handled by a view)
             if game.ended()
             {
                 performSegueWithIdentifier("Game Ended", sender: self)

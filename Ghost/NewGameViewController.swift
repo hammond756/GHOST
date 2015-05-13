@@ -12,12 +12,14 @@ class NewGameViewController: UIViewController {
     
     @IBOutlet weak var player1Label: UILabel!
     @IBOutlet weak var player2Label: UILabel!
+    @IBOutlet weak var engButton: UIButton!
+    @IBOutlet weak var duButton: UIButton!
     
     var game = Game.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        changeHighlightedFlag()
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
@@ -62,4 +64,38 @@ class NewGameViewController: UIViewController {
         }
     }
     
+    @IBAction func changeLanguage(sender: UIButton)
+    {
+        let symbol = sender.currentTitle!
+        
+        switch symbol
+        {
+        case "🇬🇧":
+            game.dictionary.changeLanguage("english")
+        case "🇳🇱":
+            game.dictionary.changeLanguage("dutch")
+        default:
+            break
+        }
+        
+        println(game.dictionary.currentLanguage)
+        changeHighlightedFlag()
+    }
+    
+    // maybe try attributed text? conditional on a state
+    private func changeHighlightedFlag()
+    {
+        let currentLanguage = game.dictionary.getLanguage()
+        switch currentLanguage
+        {
+        case "english":
+            engButton.alpha = 1.0
+            duButton.alpha = 0.3
+        case "dutch":
+            engButton.alpha = 0.3
+            duButton.alpha = 1.0
+        default:
+            break
+        }
+    }
 }

@@ -13,11 +13,16 @@ class DictioraryTest
     // string arrays that will store the dictionary and the filtered dictionary
     var dict = [String]()
     var subSet = [String]()
+    var currentLanguage: String
     
     init()
     {
         var defaults = NSUserDefaults.standardUserDefaults()
         
+        // initialize stored property to silence compiler error
+        currentLanguage = ""
+        
+        defaults.removeObjectForKey("dutch")
         // if no default is set, dictionaries have to be loaded in
         if defaults.objectForKey("english") == nil
         {
@@ -33,14 +38,12 @@ class DictioraryTest
         }
         
         let defaultLanguage = defaults.stringForKey("Default Language")
-        dict = defaults.objectForKey(defaultLanguage!) as! [String]
+        changeLanguage(defaultLanguage!)
     }
     
     private func loadTextFile(language: String)
     {
         var defaults = NSUserDefaults.standardUserDefaults()
-        
-        println("Initializing")
         
         // source: http://stackoverflow.com/questions/24097826/read-and-write-data-from-text-file
         // generates paths to the text files, reads them as strings and splits into arrays
@@ -51,15 +54,26 @@ class DictioraryTest
             
             if let dictString = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
             {
-                println("Start split")
+                // seems to be a problem with dutch.txt (the words are nog sepertated by "\n")
                 var dictArray = split(dictString) {$0 == "\n"}
-                println("Finished split")
                 defaults.setObject(dictArray, forKey: language)
             }
         }
         
     }
     
+    // language is a lowecase string 'english' or 'dutch'
+    func changeLanguage(language: String)
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        dict = defaults.objectForKey(language) as! [String]
+        currentLanguage = language
+    }
+    
+    func getLanguage() -> String
+    {
+        return currentLanguage
+    }
     // save words with prefix in the subSet
     func filter(subString: String)
     {

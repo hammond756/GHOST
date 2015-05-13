@@ -10,9 +10,13 @@ import UIKit
 
 class FinshedGameViewController: UIViewController
 {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
         
         if game.winner()
         {
