@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D8744BCA-DCB2-4789-8F88-BE9981BC728D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Ghost</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>16548F160FF75527E85804A36A4D937A3A7E4175</key>
 		<string>https://github.com/hammond756/GHOST.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Ghost/Ghost.xcodeproj/project.xcworkspace</string>
+	<string>Ghost/Ghost.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>16548F160FF75527E85804A36A4D937A3A7E4175</key>
