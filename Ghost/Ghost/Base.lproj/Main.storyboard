@@ -539,7 +539,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GHOST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ti2-fk-ZUe">
-                                <rect key="frame" x="182" y="28" width="236" height="98"/>
+                                <rect key="frame" x="182" y="72" width="236" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="98" id="8S8-UW-aHF"/>
                                     <constraint firstAttribute="width" constant="236" id="IX9-cT-gJg"/>
@@ -549,7 +549,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83H-dJ-44h">
-                                <rect key="frame" x="196" y="196" width="100" height="100"/>
+                                <rect key="frame" x="196" y="240" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="1ld-QZ-SAC"/>
                                     <constraint firstAttribute="height" constant="100" id="6us-8b-6JF"/>
@@ -563,7 +563,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niV-Vk-o7F">
-                                <rect key="frame" x="304" y="304" width="100" height="100"/>
+                                <rect key="frame" x="304" y="348" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="hl4-Tn-QUL"/>
                                     <constraint firstAttribute="height" constant="100" id="thw-zh-yqb"/>
@@ -573,7 +573,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-xb-zCX">
-                                <rect key="frame" x="196" y="304" width="100" height="100"/>
+                                <rect key="frame" x="196" y="348" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="q3N-AB-hpw"/>
                                     <constraint firstAttribute="width" constant="100" id="xnD-Bf-t1x"/>
@@ -586,7 +586,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vo-Mw-T4u">
-                                <rect key="frame" x="304" y="196" width="100" height="100"/>
+                                <rect key="frame" x="304" y="240" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Py9-Qc-InZ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="V6f-q7-oeh"/>
@@ -650,7 +650,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="haa-Bh-ldb"/>
         <segue reference="sMe-zd-ZUJ"/>
+        <segue reference="OfM-Bu-2Cm"/>
     </inferredMetricsTieBreakers>
 </document>

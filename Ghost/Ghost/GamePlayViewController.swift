@@ -11,17 +11,10 @@ import UIKit
 class GamePlayViewController: UIViewController {
     
     // make sure the title in the UINavigationBar is correct on the first turn
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
-        if game.turn()
-        {
-            self.title = game.player1?.name
-        }
-        else
-        {
-            self.title = game.player2?.name
-        }
+        updateScreen()
     }
     
     // link outlets in the storyboard
@@ -32,6 +25,7 @@ class GamePlayViewController: UIViewController {
     
     var navBar: UINavigationBar = UINavigationBar()
     
+    // updates view title, word fragment displayed and clears input field
     func updateScreen()
     {
         // change the UINavigationBar title to the current player

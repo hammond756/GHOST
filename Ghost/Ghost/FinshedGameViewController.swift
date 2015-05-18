@@ -10,12 +10,14 @@ import UIKit
 
 class FinshedGameViewController: UIViewController
 {
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool)
+    {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         if game.winner()
@@ -29,10 +31,12 @@ class FinshedGameViewController: UIViewController
             game.player2?.incrementScore()
         }
         
+       //  settings.save()
         game.reset()
     }
     
     var game = Game.sharedInstance
+    var settings = Settings.sharedInstance
     
     @IBOutlet weak var winnerLabel: UILabel!
     
@@ -40,27 +44,4 @@ class FinshedGameViewController: UIViewController
     {
         navigationController?.popToRootViewControllerAnimated(true)
     }
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        var destination = segue.destinationViewController as? UIViewController
-//        
-//        if let ngvc = destination as? NewGameViewController
-//        {
-//            if let identifier = segue.identifier
-//            {
-//                switch identifier
-//                {
-//                case "Return To Homescreen":
-//                    game.reset()
-//                    println("Quit")
-//                case "Show Highscores":
-//                    println("Highscores")
-//                case "Replay Game":
-//                    println("Replay")
-//                default: break
-//                }
-//            }
-//        }
-//        
-//    }
-    
 }

@@ -10,15 +10,15 @@ import UIKit
 
 class SettingsViewController: UIViewController
 {
+    @IBOutlet weak var defaultLangauge: UIButton!
+    var defaults = NSUserDefaults.standardUserDefaults()
+    let flags = ["english": "🇬🇧", "dutch": "🇳🇱"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
         defaultLangauge.setTitle(flags[defaults.stringForKey("Default Language")!], forState: .Normal)
     }
-    
-    @IBOutlet weak var defaultLangauge: UIButton!
-    var defaults = NSUserDefaults.standardUserDefaults()
-    let flags = ["english": "🇬🇧", "dutch": "🇳🇱"]
 
     @IBAction func changeDefaultLanguage()
     {

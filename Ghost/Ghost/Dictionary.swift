@@ -22,7 +22,6 @@ class DictioraryTest
         // initialize stored property to silence compiler error
         currentLanguage = ""
         
-        defaults.removeObjectForKey("dutch")
         // if no default is set, dictionaries have to be loaded in
         if defaults.objectForKey("english") == nil
         {
@@ -41,6 +40,7 @@ class DictioraryTest
         changeLanguage(defaultLanguage!)
     }
     
+    // reads dictionary text file to a string and splits it to store individual words in an array
     private func loadTextFile(language: String)
     {
         var defaults = NSUserDefaults.standardUserDefaults()
@@ -54,12 +54,10 @@ class DictioraryTest
             
             if let dictString = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
             {
-                // seems to be a problem with dutch.txt (the words are nog sepertated by "\n")
                 var dictArray = split(dictString) {$0 == "\n"}
                 defaults.setObject(dictArray, forKey: language)
             }
         }
-        
     }
     
     // language is a lowecase string 'english' or 'dutch'
