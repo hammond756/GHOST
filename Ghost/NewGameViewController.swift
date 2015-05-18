@@ -17,9 +17,9 @@ class NewGameViewController: UIViewController {
     
     var game = Game.sharedInstance
     
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+
         changeHighlightedFlag()
         var playerLabels: [UILabel] = [player1Label, player2Label]
         navigationController?.setNavigationBarHidden(false, animated: true)

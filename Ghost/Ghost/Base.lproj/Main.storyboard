@@ -569,7 +569,8 @@
                                     <constraint firstAttribute="height" constant="100" id="6us-8b-6JF"/>
                                     <constraint firstAttribute="width" constant="100" id="djp-Cc-mmp"/>
                                 </constraints>
-                                <state key="normal" title="PLAY">
+                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                <state key="normal" title="🎮">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -582,7 +583,8 @@
                                     <constraint firstAttribute="width" constant="100" id="hl4-Tn-QUL"/>
                                     <constraint firstAttribute="height" constant="100" id="thw-zh-yqb"/>
                                 </constraints>
-                                <state key="normal" title="INSTRUCTIONS">
+                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                <state key="normal" title="❓">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -592,7 +594,8 @@
                                     <constraint firstAttribute="height" constant="100" id="q3N-AB-hpw"/>
                                     <constraint firstAttribute="width" constant="100" id="xnD-Bf-t1x"/>
                                 </constraints>
-                                <state key="normal" title="HIGHSCORES">
+                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                <state key="normal" title="🏆">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -606,7 +609,8 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="V6f-q7-oeh"/>
                                     <constraint firstAttribute="width" constant="100" id="Yce-co-Vqw"/>
                                 </constraints>
-                                <state key="normal" title="SETTINGS">
+                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                <state key="normal" title="🔧">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -664,7 +668,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="haa-Bh-ldb"/>
         <segue reference="sMe-zd-ZUJ"/>
-        <segue reference="OfM-Bu-2Cm"/>
     </inferredMetricsTieBreakers>
 </document>

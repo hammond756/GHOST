@@ -11,7 +11,7 @@ import UIKit
 class ChoosePlayerViewController: UITableViewController
 {
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         tableView.reloadData()
     }
     
@@ -33,6 +33,24 @@ class ChoosePlayerViewController: UITableViewController
         cell.textLabel?.text = player.name
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle
+    {
+        return .Delete
+    }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView!.setEditing(editing, animated: animated)
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete
+        {
+            settings.players.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+        }
     }
     
     // pop view of navigation controller when an item is selected
