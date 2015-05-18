@@ -23,7 +23,6 @@ class FinshedGameViewController: UIViewController
         game.winner()?.incrementScore()
         winnerLabel.text = game.winner()?.name
         
-        game.reset()
         settings.savePlayers()
     }
     
@@ -34,6 +33,15 @@ class FinshedGameViewController: UIViewController
     
     @IBAction func homeScreenSegue()
     {
+        game.reset()
         navigationController?.popToRootViewControllerAnimated(true)
     }
+    
+    @IBAction func replayWithSamePlayers()
+    {
+        game.dictionary.reset()
+        game.currentWord = ""
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
 }

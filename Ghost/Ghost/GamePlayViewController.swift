@@ -11,9 +11,10 @@ import UIKit
 class GamePlayViewController: UIViewController {
     
     // make sure the title in the UINavigationBar is correct on the first turn
-    override func viewDidLoad()
+    override func viewWillAppear(animated: Bool)
     {
-        super.viewDidLoad()
+        super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         updateScreen()
     }
     

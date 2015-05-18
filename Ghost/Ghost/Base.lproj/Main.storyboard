@@ -310,6 +310,9 @@
                                 <state key="normal" title="Replay">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="replayWithSamePlayers" destination="ZpG-SR-egG" eventType="touchUpInside" id="qTi-ku-IAP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cis-Hm-Sn8">
                                 <rect key="frame" x="358" y="360" width="78" height="30"/>
@@ -385,18 +388,27 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0v-yb-DQv">
                                 <rect key="frame" x="311" y="229" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="RcN-Dn-hy2"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAY-fq-EzM">
                                 <rect key="frame" x="311" y="291" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="XHC-k4-l4G"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5P-B4-waY">
                                 <rect key="frame" x="311" y="350" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="cIH-OH-M5v"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -446,6 +458,7 @@
                             <constraint firstItem="z0v-yb-DQv" firstAttribute="centerX" secondItem="AUc-mP-KEI" secondAttribute="centerX" constant="31.5" id="IPq-cY-jmG"/>
                             <constraint firstItem="AUc-mP-KEI" firstAttribute="centerX" secondItem="8vy-hL-23p" secondAttribute="centerX" id="LZ9-R6-g1s"/>
                             <constraint firstItem="AUc-mP-KEI" firstAttribute="top" secondItem="dji-pH-E3B" secondAttribute="bottom" constant="17" id="NFA-Vy-xID"/>
+                            <constraint firstItem="lz5-5F-aIh" firstAttribute="leading" secondItem="evC-aF-1h8" secondAttribute="leading" id="SXB-QP-tQQ"/>
                             <constraint firstItem="aAY-fq-EzM" firstAttribute="baseline" secondItem="tgN-uN-NR1" secondAttribute="firstBaseline" id="TJG-c2-MUN"/>
                             <constraint firstItem="evC-aF-1h8" firstAttribute="leading" secondItem="z0v-yb-DQv" secondAttribute="trailing" constant="43" id="UON-ZZ-uD5"/>
                             <constraint firstAttribute="centerY" secondItem="lz5-5F-aIh" secondAttribute="centerY" constant="-1.5" id="UWa-uL-5eU"/>
@@ -456,6 +469,7 @@
                             <constraint firstItem="KD0-go-pdG" firstAttribute="leading" secondItem="i5P-B4-waY" secondAttribute="trailing" constant="43" id="hSu-7l-RV4"/>
                             <constraint firstItem="lz5-5F-aIh" firstAttribute="leading" secondItem="aAY-fq-EzM" secondAttribute="trailing" constant="43" id="i7u-4w-RAp"/>
                             <constraint firstAttribute="centerY" secondItem="aAY-fq-EzM" secondAttribute="centerY" constant="-1.5" id="irB-Zx-fmm"/>
+                            <constraint firstItem="KD0-go-pdG" firstAttribute="leading" secondItem="evC-aF-1h8" secondAttribute="leading" id="jHu-Vf-ZGj"/>
                             <constraint firstItem="tgN-uN-NR1" firstAttribute="top" secondItem="DvD-G9-Zsh" secondAttribute="bottom" constant="41" id="jIQ-vi-47d"/>
                             <constraint firstItem="DvD-G9-Zsh" firstAttribute="leading" secondItem="8vy-hL-23p" secondAttribute="leading" constant="222" id="koM-OD-ewX"/>
                             <constraint firstItem="KD0-go-pdG" firstAttribute="top" secondItem="lz5-5F-aIh" secondAttribute="bottom" constant="38" id="sZh-kl-7hs"/>
