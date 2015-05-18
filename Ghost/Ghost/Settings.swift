@@ -10,21 +10,7 @@ import Foundation
 
 class Settings
 {
-    class var sharedInstance: Settings
-    {
-        struct Static
-        {
-            static var instance: Settings?
-            static var token: dispatch_once_t = 0
-        }
-        
-        dispatch_once(&Static.token)
-        {
-            Static.instance = Settings()
-        }
-        
-        return Static.instance!
-    }
+    static let sharedInstance = Settings()
     
     init()
     {

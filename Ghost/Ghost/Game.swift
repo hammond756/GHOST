@@ -12,19 +12,8 @@ class Game
 {
     // singleton pattern that allows the game instance to be shared between all controllers
     // source: http://anthon.io/how-to-share-data-between-view-controllers-in-swift/
-    class var sharedInstance: Game
-    {
-        struct Static {
-            static var instance: Game?
-            static var token: dispatch_once_t = 0
-        }
-        
-        dispatch_once(&Static.token) {
-            Static.instance = Game()
-        }
-        
-        return Static.instance!
-    }
+    // updated implementation: https://github.com/hpique/SwiftSingleton
+    static let sharedInstance = Game()
     
     var dictionary = DictioraryTest()
     
