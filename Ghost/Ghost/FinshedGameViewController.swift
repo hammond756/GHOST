@@ -20,19 +20,11 @@ class FinshedGameViewController: UIViewController
     {
         super.viewDidLoad()
         
-        if game.winner()
-        {
-            winnerLabel.text = game.player1?.name
-            game.player1?.incrementScore()
-        }
-        else
-        {
-            winnerLabel.text = game.player2?.name
-            game.player2?.incrementScore()
-        }
+        game.winner()?.incrementScore()
+        winnerLabel.text = game.winner()?.name
         
-       //  settings.save()
         game.reset()
+        settings.savePlayers()
     }
     
     var game = Game.sharedInstance

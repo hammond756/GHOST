@@ -17,39 +17,42 @@ class NewGameViewController: UIViewController {
     
     var game = Game.sharedInstance
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         changeHighlightedFlag()
+        var playerLabels: [UILabel] = [player1Label, player2Label]
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool)
+    {
         super.viewDidAppear(true)
         
-        if game.player1 == nil
+        if game.players[0] == nil
         {
             player1Label.text = "Player 1"
             player1Label.alpha = 0.3
         }
         else
         {
-            player1Label.text = game.player1?.name
+            player1Label.text = game.players[0]?.name
             player1Label.alpha = 1.0
         }
-        if game.player2 == nil
+        if game.players[1] == nil
         {
             player2Label.text = "Player 2"
             player2Label.alpha = 0.3
         }
         else
         {
-            player2Label.text = game.player2?.name
+            player2Label.text = game.players[1]?.name
             player2Label.alpha = 1.0
         }
-        
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         if let cpvc = segue.destinationViewController as? ChoosePlayerViewController
         {
             if let identifier = segue.identifier
@@ -67,22 +70,12 @@ class NewGameViewController: UIViewController {
     @IBAction func changeLanguage(sender: UIButton)
     {
         let symbol = sender.currentTitle!
+        let flags = ["🇬🇧": "english", "🇳🇱": "dutch"]
         
-        switch symbol
-        {
-        case "🇬🇧":
-            game.dictionary.changeLanguage("english")
-        case "🇳🇱":
-            game.dictionary.changeLanguage("dutch")
-        default:
-            break
-        }
-        
-        println(game.dictionary.currentLanguage)
+        game.dictionary.changeLanguage(flags[symbol]!)
         changeHighlightedFlag()
     }
     
-    // maybe try attributed text? conditional on a state
     private func changeHighlightedFlag()
     {
         switch game.dictionary.currentLanguage

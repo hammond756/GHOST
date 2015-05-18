@@ -29,14 +29,7 @@ class GamePlayViewController: UIViewController {
     func updateScreen()
     {
         // change the UINavigationBar title to the current player
-        if game.turn()
-        {
-            self.title = game.player1?.name
-        }
-        else
-        {
-            self.title = game.player2?.name
-        }
+        title = game.players[game.turn()]?.name
         
         // update the wordfragment
         wordLabel.text = game.currentWord.capitalizedString

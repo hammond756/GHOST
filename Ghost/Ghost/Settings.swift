@@ -34,7 +34,6 @@ class Settings
         }
     }
     
-    var playersDict = [String: Int]()
     var players = [Player]()
     var defaults = NSUserDefaults.standardUserDefaults()
     
@@ -43,11 +42,11 @@ class Settings
     {
         let newPlayer = Player(name: name, score: 0)
         players.append(newPlayer)
-        playersDict[name] = 0
         
         savePlayers()
     }
     
+    // converts a dictionary to an array of player instances
     private func convertPlayers(playersDict: [String: Int])
     {
         for (name, score) in playersDict
@@ -57,7 +56,8 @@ class Settings
         }
     }
     
-    private func savePlayers()
+    // converts player array to a dictionary and stores it in NSUserDefaults
+    func savePlayers()
     {
         var tempDict = [String: Int]()
         
@@ -66,9 +66,7 @@ class Settings
             tempDict[player.name] = player.score
         }
         
-        playersDict = tempDict
-        
-        defaults.setObject(playersDict, forKey: "Players")
+        defaults.setObject(tempDict, forKey: "Players")
     }
     
     // language is string with an uppercase first character

@@ -30,17 +30,7 @@ class Game
     
     var currentWord = ""
     
-    var player1: Player?
-    var player2: Player?
-    
-    var isFresh: Bool
-    {
-        get
-        {
-            return (player1 == nil && player2 == nil)
-        }
-    }
-    
+    var players = [Player?](count: 2, repeatedValue: nil)
     
     // method that ads the guessed letter to the current word and checks  the dictionary
     func guess (letter: String) -> String?
@@ -64,9 +54,16 @@ class Game
         return nil
     }
     
-    func turn() -> Bool
+    // returns 0 for player 1 and 1 for player two
+    func turn() -> Int
     {
-        return count(currentWord) % 2 == 0
+        return count(currentWord) % 2
+    }
+    
+    // returns the who last played a the move that ended the game
+    func winner() -> Player?
+    {
+        return players[turn()]
     }
     
     func ended() -> Bool
@@ -79,16 +76,10 @@ class Game
         return subStringNotInDict || completedWord
     }
     
-    func winner() -> Bool
-    {
-        return turn()
-    }
-    
     func reset()
     {
         dictionary.reset()
         currentWord = ""
-        player1 = nil
-        player2 = nil
+        players = [Player?](count: 2, repeatedValue: nil)
     }
 }
