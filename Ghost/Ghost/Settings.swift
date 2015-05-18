@@ -28,8 +28,9 @@ class Settings
     {
         let newPlayer = Player(name: name, score: 0)
         players.append(newPlayer)
-        
+        println("start")
         savePlayers()
+        println("klaar")
     }
     
     // converts a dictionary to an array of player instances

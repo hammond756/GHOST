@@ -22,16 +22,17 @@ class DictioraryTest
         // initialize stored property to silence compiler error
         currentLanguage = ""
         
+        let languages = ["english", "dutch"]
+
         // if no default is set, dictionaries have to be loaded in
-        if defaults.objectForKey("english") == nil
+        for language in languages
         {
-            loadTextFile("english")
+            if defaults.objectForKey(language) == nil
+            {
+                loadTextFile(language)
+            }
         }
-        if defaults.objectForKey("dutch") == nil
-        {
-            loadTextFile("dutch")
-        }
-        defaults.removeObjectForKey("Default Language")
+
         if defaults.stringForKey("Default Language") == nil
         {
             defaults.setValue("english", forKey: "Default Language")
@@ -53,10 +54,10 @@ class DictioraryTest
             let docs = dirs[0]
             let path = NSBundle.mainBundle().pathForResource(language, ofType: "txt")
             
-            if let dictString = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
+            if let dict = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
             {
-                var dictArray = split(dictString) {$0 == "\n"}
-                defaults.setObject(dictArray, forKey: language)
+                dict.componentsSeparatedByString("\n")
+                defaults.setObject(dict, forKey: language)
             }
         }
     }
