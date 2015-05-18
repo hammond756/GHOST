@@ -34,9 +34,6 @@ class GamePlayViewController: UIViewController {
         
         // update the wordfragment
         wordLabel.text = game.currentWord.capitalizedString
-        
-        // clear input field
-        inputField.text = ""
     }
     
     @IBAction func playLetter()
@@ -49,11 +46,25 @@ class GamePlayViewController: UIViewController {
             // update the view
             updateScreen()
             
+            inputField.text = ""
+            
             if game.ended()
             {
                 performSegueWithIdentifier("Game Ended", sender: self)
             }
         }
+    }
+    
+    override func encodeRestorableStateWithCoder(coder: NSCoder)
+    {
+        super.encodeRestorableStateWithCoder(coder)
+        coder.encodeObject(inputField.text, forKey: "Input field")
+    }
+    
+    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+        super.decodeRestorableStateWithCoder(coder)
+        let text = coder.decodeObjectForKey("Input field") as! String
+        inputField.text = text
     }
     
     

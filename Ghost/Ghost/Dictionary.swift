@@ -31,6 +31,7 @@ class DictioraryTest
         {
             loadTextFile("dutch")
         }
+        defaults.removeObjectForKey("Default Language")
         if defaults.stringForKey("Default Language") == nil
         {
             defaults.setValue("english", forKey: "Default Language")

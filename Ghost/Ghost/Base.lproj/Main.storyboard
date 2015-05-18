@@ -9,7 +9,7 @@
         <!--Game Play View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GamePlayViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Gameplay" id="BYZ-38-t0r" customClass="GamePlayViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -69,7 +69,7 @@
         <!--Players-->
         <scene sceneID="AtT-oU-rAc">
             <objects>
-                <viewController id="8o1-eM-07j" customClass="NewGameViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="New Game" id="8o1-eM-07j" customClass="NewGameViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="58w-GF-ytA"/>
                         <viewControllerLayoutGuide type="bottom" id="Jgq-OY-7oD"/>
@@ -183,7 +183,7 @@
         <!--Title-->
         <scene sceneID="Zo3-BU-a36">
             <objects>
-                <tableViewController id="wWQ-Fm-kew" customClass="ChoosePlayerViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="Choose Player" id="wWQ-Fm-kew" customClass="ChoosePlayerViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rzT-Pd-Co2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,7 +227,7 @@
         <!--Add Player-->
         <scene sceneID="0SG-yS-YBK">
             <objects>
-                <viewController id="dal-k7-ae2" customClass="AddPlayerViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Add Player" id="dal-k7-ae2" customClass="AddPlayerViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="29i-Dn-kKh"/>
                         <viewControllerLayoutGuide type="bottom" id="JQM-rM-IhK"/>
@@ -280,7 +280,7 @@
         <!--Finshed Game View Controller-->
         <scene sceneID="dzy-1k-VKC">
             <objects>
-                <viewController id="ZpG-SR-egG" customClass="FinshedGameViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Finished" id="ZpG-SR-egG" customClass="FinshedGameViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DhV-il-bmC"/>
                         <viewControllerLayoutGuide type="bottom" id="BZJ-uq-Tbj"/>
@@ -359,7 +359,7 @@
         <!--Highscores-->
         <scene sceneID="bGw-za-ema">
             <objects>
-                <viewController id="Qbq-pO-HLR" customClass="HighscoreViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Highscores" id="Qbq-pO-HLR" customClass="HighscoreViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dji-pH-E3B"/>
                         <viewControllerLayoutGuide type="bottom" id="u88-ES-uyW"/>
@@ -543,7 +543,7 @@
         <!--Home Page View Controller-->
         <scene sceneID="tF2-z0-Et0">
             <objects>
-                <viewController id="lZ6-kS-mT2" customClass="HomePageViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="Homescreen" id="lZ6-kS-mT2" customClass="HomePageViewController" customModule="Ghost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ixc-ag-5H4"/>
                         <viewControllerLayoutGuide type="bottom" id="rjJ-AW-bdj"/>
@@ -649,7 +649,7 @@
         <!--Navigation Controller-->
         <scene sceneID="QU8-26-2a3">
             <objects>
-                <navigationController id="TcP-JW-LBH" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="Navigation" id="TcP-JW-LBH" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tcm-13-BkW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -25,4 +25,16 @@ class AddPlayerViewController: UIViewController {
     {
         navigationController?.popViewControllerAnimated(true)
     }
+    
+    override func encodeRestorableStateWithCoder(coder: NSCoder)
+    {
+        super.encodeRestorableStateWithCoder(coder)
+        coder.encodeObject(nameField.text, forKey: "Input name")
+    }
+    
+    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+        super.decodeRestorableStateWithCoder(coder)
+        let name = coder.decodeObjectForKey("Input name") as! String
+        nameField.text = name
+    }
 }
