@@ -8,15 +8,18 @@
 
 import UIKit
 
-class HomePageViewController: UIViewController {
+class HomePageViewController: UIViewController
+{
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // make sure game instance is ready throughout the app
         var game = Game.sharedInstance
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool)
+    {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }

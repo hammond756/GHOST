@@ -8,7 +8,8 @@
 
 import UIKit
 
-class AddPlayerViewController: UIViewController {
+class AddPlayerViewController: UIViewController
+{
     
     @IBOutlet weak var nameField: UITextField!
     
@@ -32,7 +33,8 @@ class AddPlayerViewController: UIViewController {
         coder.encodeObject(nameField.text, forKey: "Input name")
     }
     
-    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+    override func decodeRestorableStateWithCoder(coder: NSCoder)
+    {
         super.decodeRestorableStateWithCoder(coder)
         let name = coder.decodeObjectForKey("Input name") as! String
         nameField.text = name

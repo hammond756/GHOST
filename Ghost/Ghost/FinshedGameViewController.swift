@@ -19,12 +19,11 @@ class FinshedGameViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        winnerLabel.text = winner
+        winnerLabel.text = game.winner().name
         settings.savePlayers()
         game.reset(clearDict: true)
     }
     
-    var winner = ""
     var game = Game.sharedInstance
     var settings = Settings.sharedInstance
     

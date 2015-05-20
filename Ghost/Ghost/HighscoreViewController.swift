@@ -20,19 +20,20 @@ class HighscoreViewController: UIViewController
     var labels = [(UILabel,UILabel)]()
     var highscores = Highscores()
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
         
         labels = [(firstPlace, firstPlaceScore), (secondPlace, secondPlaceScore), (thirdPlace, thirdPlaceScore)]
-        let size = highscores.highScoreList.count
+        let size = highscores.getHighScoreList().count
         
         for (i,(nameLabel, scoreLabel)) in enumerate(labels)
         {
             if i < size
             {
-                nameLabel.text = highscores.highScoreList[i].name
-                scoreLabel.text = String(highscores.highScoreList[i].score)
+                nameLabel.text = highscores.getHighScoreList()[i].name
+                scoreLabel.text = String(highscores.getHighScoreList()[i].score)
             }
             else
             {

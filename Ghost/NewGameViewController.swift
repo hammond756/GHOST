@@ -8,7 +8,17 @@
 
 import UIKit
 
-class NewGameViewController: UIViewController {
+extension UILabel
+{
+    func setProperties(text: String?, alpha: Float)
+    {
+        self.text = text
+        self.alpha = CGFloat(alpha)
+    }
+}
+
+class NewGameViewController: UIViewController
+{
     
     @IBOutlet weak var player1Label: UILabel!
     @IBOutlet weak var player2Label: UILabel!
@@ -17,37 +27,17 @@ class NewGameViewController: UIViewController {
     
     var game = Game.sharedInstance
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-
-        changeHighlightedFlag()
-        var playerLabels: [UILabel] = [player1Label, player2Label]
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
-    override func viewDidAppear(animated: Bool)
+    override func viewWillAppear(animated: Bool)
     {
-        super.viewDidAppear(true)
+        super.viewWillAppear(true)
+        changeHighlightedFlag(game.dictionary.currentLanguage)
+        navigationController?.setNavigationBarHidden(false, animated: true)
         
-        if game.players[0] == nil
+        let labels = [player1Label, player2Label]
+        
+        for (i,label) in enumerate(labels)
         {
-            player1Label.text = "Player 1"
-            player1Label.alpha = 0.3
-        }
-        else
-        {
-            player1Label.text = game.players[0]?.name
-            player1Label.alpha = 1.0
-        }
-        if game.players[1] == nil
-        {
-            player2Label.text = "Player 2"
-            player2Label.alpha = 0.3
-        }
-        else
-        {
-            player2Label.text = game.players[1]?.name
-            player2Label.alpha = 1.0
+            game.players[i] == nil ? labels[i].setProperties("Player \(i+1)", alpha: 0.3) : labels[i].setProperties(game.players[i]?.name, alpha: 1.0)
         }
     }
     
@@ -84,25 +74,24 @@ class NewGameViewController: UIViewController {
     
     @IBAction func changeLanguage(sender: UIButton)
     {
-        let symbol = sender.currentTitle!
-        let flags: Dictionary = ["🇬🇧": "english", "🇳🇱": "dutch"]
-        
-        game.dictionary.changeLanguage(flags[symbol]!)
-        changeHighlightedFlag()
+        sender == "🇬🇧" ? changeLanguage("english") : changeLanguage("dutch")
     }
     
-    private func changeHighlightedFlag()
+    // change language in dictionary object and update flags their highlighting
+    private func changeLanguage(toTarget: String)
     {
-        switch game.dictionary.currentLanguage
+        game.dictionary.changeLanguage(toTarget)
+        changeHighlightedFlag(toTarget)
+    }
+
+    private func changeHighlightedFlag(to: String)
+    {
+        func switchHighlight(fromButton: UIButton, toButton: UIButton)
         {
-        case "english":
-            engButton.alpha = 1.0
-            duButton.alpha = 0.3
-        case "dutch":
-            engButton.alpha = 0.3
-            duButton.alpha = 1.0
-        default:
-            break
+            fromButton.alpha = 0.3
+            toButton.alpha = 1.0
         }
+        
+        to == "english" ? switchHighlight(duButton, engButton) : switchHighlight(engButton, duButton)
     }
 }

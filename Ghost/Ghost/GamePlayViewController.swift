@@ -50,15 +50,6 @@ class GamePlayViewController: UIViewController {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let fgvc = segue.destinationViewController as? FinshedGameViewController
-        {
-            if segue.identifier == "Game Ended"
-            {
-                fgvc.winner = game.winner().name
-            }
-        }
-    }
     override func encodeRestorableStateWithCoder(coder: NSCoder)
     {
         super.encodeRestorableStateWithCoder(coder)
