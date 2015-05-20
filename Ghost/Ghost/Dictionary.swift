@@ -10,7 +10,7 @@ import Foundation
 
 class DictionaryClass
 {
-    // string arrays that will store the dictionary and the filtered dictionary
+    // string arrays that will store the full dictionary and the filtered dictionary
     var dict = [String]()
     var subSet = [String]()
     var currentLanguage = ""

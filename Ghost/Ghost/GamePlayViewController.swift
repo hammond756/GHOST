@@ -10,6 +10,10 @@ import UIKit
 
 class GamePlayViewController: UIViewController
 {
+    @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet weak var letterField: UITextField!
+    var game = Game.sharedInstance
+    
     // make sure the title in the UINavigationBar is correct on the first turn
     override func viewWillAppear(animated: Bool)
     {
@@ -17,35 +21,26 @@ class GamePlayViewController: UIViewController
         navigationController?.setNavigationBarHidden(false, animated: false)
         updateScreen()
     }
-    
-    // link outlets in the storyboard
-    @IBOutlet weak var inputField: UITextField!
-    @IBOutlet weak var wordLabel: UILabel!
-    
-    var game = Game.sharedInstance
-    
-    var navBar: UINavigationBar = UINavigationBar()
-    
+
     // updates view title, word fragment displayed and clears input field
     func updateScreen()
     {
-        title = game.players[game.turn()]?.name
+        title = game.players[game.currentPlayerIndex()]?.name
         wordLabel.text = game.currentWord.capitalizedString
-        inputField.text = ""
+        letterField.text = ""
     }
     
     // updates dictionary and current word, checks for the end of a game and updates the view
     @IBAction func playLetter()
     {
-        if let input = inputField.text
+        if let letter = letterField.text
         {
-            game.guess(input)
+            game.guess(letter)
             updateScreen()
             
             if game.ended()
             {
                 game.winner().incrementScore()
-                println(game.players)
                 performSegueWithIdentifier("Game Ended", sender: self)
             }
         }
@@ -55,7 +50,7 @@ class GamePlayViewController: UIViewController
     override func encodeRestorableStateWithCoder(coder: NSCoder)
     {
         super.encodeRestorableStateWithCoder(coder)
-        coder.encodeObject(inputField.text, forKey: "Input field")
+        coder.encodeObject(letterField.text, forKey: "Input field")
     }
     
     // decode value inputField and update the view
@@ -64,7 +59,7 @@ class GamePlayViewController: UIViewController
         let defaults = NSUserDefaults.standardUserDefaults()
         super.decodeRestorableStateWithCoder(coder)
         let text = coder.decodeObjectForKey("Input field") as! String
-        inputField.text = text
+        letterField.text = text
     }
 }
 

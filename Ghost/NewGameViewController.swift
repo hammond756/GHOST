@@ -23,8 +23,9 @@ class NewGameViewController: UIViewController
     
     @IBOutlet weak var player1Label: UILabel!
     @IBOutlet weak var player2Label: UILabel!
-    @IBOutlet weak var engButton: UIButton!
-    @IBOutlet weak var duButton: UIButton!
+    @IBOutlet weak var englishButton: UIButton!
+    @IBOutlet weak var dutchButton: UIButton!
+
     
     var game = Game.sharedInstance
     
@@ -75,17 +76,17 @@ class NewGameViewController: UIViewController
     
     @IBAction func changeLanguage(sender: UIButton)
     {
-        sender == "🇬🇧" ? changeLanguage("english") : changeLanguage("dutch")
+        sender.currentTitle == "🇬🇧" ? changeLanguage("english") : changeLanguage("dutch")
     }
     
     // change language in dictionary object and update flags their highlighting
-    private func changeLanguage(toTarget: String)
+    private func changeLanguage(language: String)
     {
-        game.dictionary.changeLanguage(toTarget)
-        changeHighlightedFlag(toTarget)
+        game.dictionary.changeLanguage(language)
+        changeHighlightedFlag(language)
     }
 
-    private func changeHighlightedFlag(to: String)
+    private func changeHighlightedFlag(flag: String)
     {
         func switchHighlight(fromButton: UIButton, toButton: UIButton)
         {
@@ -93,6 +94,6 @@ class NewGameViewController: UIViewController
             toButton.alpha = 1.0
         }
         
-        to == "english" ? switchHighlight(duButton, engButton) : switchHighlight(engButton, duButton)
+        flag == "english" ? switchHighlight(dutchButton, englishButton) : switchHighlight(englishButton, dutchButton)
     }
 }

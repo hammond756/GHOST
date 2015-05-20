@@ -26,7 +26,8 @@ class SettingsViewController: UIViewController
     {
         let current = defaults.stringForKey("Default Language")
         
-        current == "english" ? settings.setDefaultLanguage("dutch") : settings.setDefaultLanguage("dutch")
+        current == "english" ? settings.setDefaultLanguage("dutch") : settings.setDefaultLanguage("english")
+        
         defaultLangauge.setTitle(flags[defaults.stringForKey("Default Language")!], forState: .Normal)
     }
 }

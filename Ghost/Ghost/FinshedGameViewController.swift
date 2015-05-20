@@ -30,7 +30,7 @@ class FinshedGameViewController: UIViewController
     @IBOutlet weak var winnerLabel: UILabel!
     
     // pop to HomeScreenView and clear the players
-    @IBAction func homeScreenSegue()
+    @IBAction func quitToHomeScreen()
     {
         game.reset(clearDict: false, clearPlayers: true)
         navigationController?.popToRootViewControllerAnimated(true)

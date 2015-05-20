@@ -57,7 +57,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="inputField" destination="T6g-lz-01h" id="mgX-z8-PS0"/>
+                        <outlet property="letterField" destination="T6g-lz-01h" id="hc4-w8-UWX"/>
                         <outlet property="wordLabel" destination="QlF-6r-i9w" id="hxF-95-C9V"/>
                         <segue destination="ZpG-SR-egG" kind="show" identifier="Game Ended" id="7lz-Ay-Oe2"/>
                     </connections>
@@ -170,8 +170,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Players" id="5Bc-Wi-aOD"/>
                     <connections>
-                        <outlet property="duButton" destination="FLm-YY-ufm" id="NT3-Ii-i5T"/>
-                        <outlet property="engButton" destination="k5H-Ee-Uaf" id="vdP-qh-bzQ"/>
+                        <outlet property="dutchButton" destination="FLm-YY-ufm" id="plC-nm-xVP"/>
+                        <outlet property="englishButton" destination="k5H-Ee-Uaf" id="YqV-Vs-LZ2"/>
                         <outlet property="player1Label" destination="nru-Tf-fu6" id="gzm-Ob-ppG"/>
                         <outlet property="player2Label" destination="HqQ-ab-1P5" id="cAo-4h-79N"/>
                     </connections>
@@ -329,7 +329,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="homeScreenSegue" destination="ZpG-SR-egG" eventType="touchUpInside" id="G1e-Ej-SBY"/>
+                                    <action selector="quitToHomeScreen" destination="ZpG-SR-egG" eventType="touchUpInside" id="Osx-Gy-liP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -675,7 +675,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="haa-Bh-ldb"/>
         <segue reference="sMe-zd-ZUJ"/>
+        <segue reference="OfM-Bu-2Cm"/>
     </inferredMetricsTieBreakers>
 </document>

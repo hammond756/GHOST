@@ -37,7 +37,7 @@ class Game
     }
     
     // returns 0 for player 1 and 1 for player two
-    func turn() -> Int
+    func currentPlayerIndex() -> Int
     {
         return count(currentWord) % 2
     }
@@ -45,7 +45,7 @@ class Game
     // returns the player that did not end the game
     func winner() -> Player
     {
-        return players[turn()]!
+        return players[currentPlayerIndex()]!
     }
     
     // checks on all conditions on which Ghost must end
@@ -96,7 +96,6 @@ class Game
             for (i,player) in enumerate(restoredPlayers)
             {
                 players[i] = settings.searchForPlayer(player)
-                println(players[i]!.name)
             }
             
             currentWord = gameModelData["Current Word"] as! String
