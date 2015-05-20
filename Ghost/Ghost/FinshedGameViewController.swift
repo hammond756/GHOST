@@ -19,13 +19,12 @@ class FinshedGameViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        game.winner()?.incrementScore()
-        winnerLabel.text = game.winner()?.name
-        
+        winnerLabel.text = winner
         settings.savePlayers()
+        game.reset(clearDict: true)
     }
     
+    var winner = ""
     var game = Game.sharedInstance
     var settings = Settings.sharedInstance
     
@@ -33,15 +32,25 @@ class FinshedGameViewController: UIViewController
     
     @IBAction func homeScreenSegue()
     {
-        game.reset()
+        game.reset(clearDict: false, clearPlayers: true)
         navigationController?.popToRootViewControllerAnimated(true)
     }
     
     @IBAction func replayWithSamePlayers()
     {
-        game.dictionary.reset()
-        game.currentWord = ""
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    override func encodeRestorableStateWithCoder(coder: NSCoder)
+    {
+        super.encodeRestorableStateWithCoder(coder)
+        coder.encodeObject(winnerLabel.text, forKey: "winner")
+    }
+    
+    override func decodeRestorableStateWithCoder(coder: NSCoder)
+    {
+        super.decodeRestorableStateWithCoder(coder)
+        winnerLabel.text = coder.decodeObjectForKey("winner") as? String
     }
     
 }

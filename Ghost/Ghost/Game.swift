@@ -20,6 +20,11 @@ class Game
     
     var players = [Player?](count: 2, repeatedValue: nil)
     
+    init()
+    {
+        restoreState()
+    }
+    
     // method that ads the guessed letter to the current word and checks  the dictionary
     func guess (letter: String)
     {
@@ -38,9 +43,9 @@ class Game
     }
     
     // returns the player that did not end the game
-    func winner() -> Player?
+    func winner() -> Player
     {
-        return players[turn()]
+        return players[turn()]!
     }
     
     // checks on all conditions on which Ghost must end
@@ -55,11 +60,17 @@ class Game
     }
     
     // reset game specific variables
-    func reset()
+    func reset(clearDict: Bool = false, clearPlayers: Bool = false)
     {
-        dictionary.reset()
-        currentWord = ""
-        players = [Player?](count: 2, repeatedValue: nil)
+        if clearDict
+        {
+            dictionary.reset()
+            currentWord = ""
+        }
+        if clearPlayers
+        {
+            players = [Player?](count: 2, repeatedValue: nil)
+        }
     }
     
     // saves game specific data to user defaults
@@ -68,7 +79,7 @@ class Game
         var gameModelData = [String: AnyObject]()
         let tempPlayers = convertPlayers(players)
         var defaults = NSUserDefaults.standardUserDefaults()
-
+        println("Saved: \(tempPlayers)")
         gameModelData["Players"] = tempPlayers as AnyObject
         gameModelData["Current Word"] = currentWord as AnyObject
         gameModelData["Dictionary Subset"] = dictionary.subSet as AnyObject
@@ -83,12 +94,15 @@ class Game
         if let let gameModelData = defaults.objectForKey("Game Model Data") as? [String: AnyObject]
         {
             let restoredPlayers = gameModelData["Players"] as! [String]
+            println("Restored: \(restoredPlayers)")
             for (i,player) in enumerate(restoredPlayers)
             {
                 players[i] = settings.searchForPlayer(player)
+                println(players[i]!.name)
             }
             
             currentWord = gameModelData["Current Word"] as! String
+            println("Word: \(currentWord)")
             dictionary.subSet = gameModelData["Dictionary Subset"] as! [String]
         }
     }
@@ -104,6 +118,8 @@ class Game
             }
         }
         
+        print("in convert:")
+        println(tempPlayers)
         return tempPlayers
     }
 }

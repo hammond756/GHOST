@@ -73,12 +73,6 @@ class DictionaryClass
         subSet = dict.filter() { $0.hasPrefix(subString) }
     }
     
-    // return the size of the subSet
-    func count() -> Int
-    {
-        return self.subSet.count
-    }
-    
     // clear the subSet
     func reset()
     {

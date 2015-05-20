@@ -29,37 +29,40 @@ class GamePlayViewController: UIViewController {
     // updates view title, word fragment displayed and clears input field
     func updateScreen()
     {
-        // change the UINavigationBar title to the current player
         title = game.players[game.turn()]?.name
-        
-        // update the wordfragment
         wordLabel.text = game.currentWord.capitalizedString
+        inputField.text = ""
     }
     
     @IBAction func playLetter()
     {
         if let input = inputField.text
         {
-            // send input to the model
             game.guess(input)
-            
-            // update the view
             updateScreen()
-            
-            inputField.text = ""
             
             if game.ended()
             {
+                game.winner().incrementScore()
+                println(game.players)
                 performSegueWithIdentifier("Game Ended", sender: self)
             }
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let fgvc = segue.destinationViewController as? FinshedGameViewController
+        {
+            if segue.identifier == "Game Ended"
+            {
+                fgvc.winner = game.winner().name
+            }
+        }
+    }
     override func encodeRestorableStateWithCoder(coder: NSCoder)
     {
         super.encodeRestorableStateWithCoder(coder)
         coder.encodeObject(inputField.text, forKey: "Input field")
-        game.saveState()
     }
     
     override func decodeRestorableStateWithCoder(coder: NSCoder)
@@ -68,7 +71,6 @@ class GamePlayViewController: UIViewController {
         super.decodeRestorableStateWithCoder(coder)
         let text = coder.decodeObjectForKey("Input field") as! String
         inputField.text = text
-        game.restoreState()
     }
     
     

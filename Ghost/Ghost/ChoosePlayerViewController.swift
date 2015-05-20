@@ -67,4 +67,18 @@ class ChoosePlayerViewController: UITableViewController
         
         navigationController?.popViewControllerAnimated(true)
     }
+    
+    // save game's title
+    override func encodeRestorableStateWithCoder(coder: NSCoder)
+    {
+        super.encodeRestorableStateWithCoder(coder)
+        coder.encodeObject(title, forKey: "Current Title")
+    }
+    
+    // restore view's title
+    override func decodeRestorableStateWithCoder(coder: NSCoder)
+    {
+        super.decodeRestorableStateWithCoder(coder)
+        coder.decodeObjectForKey("Current Title")
+    }
 }
