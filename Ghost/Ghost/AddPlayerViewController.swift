@@ -10,7 +10,6 @@ import UIKit
 
 class AddPlayerViewController: UIViewController
 {
-    
     @IBOutlet weak var nameField: UITextField!
     
     var settings = Settings.sharedInstance
@@ -27,12 +26,14 @@ class AddPlayerViewController: UIViewController
         navigationController?.popViewControllerAnimated(true)
     }
     
+    // encode value of nameField
     override func encodeRestorableStateWithCoder(coder: NSCoder)
     {
         super.encodeRestorableStateWithCoder(coder)
         coder.encodeObject(nameField.text, forKey: "Input name")
     }
     
+    // decode value of nameField and update view
     override func decodeRestorableStateWithCoder(coder: NSCoder)
     {
         super.decodeRestorableStateWithCoder(coder)

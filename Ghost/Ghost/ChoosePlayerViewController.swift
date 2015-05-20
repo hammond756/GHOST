@@ -5,6 +5,7 @@
 //  Created by Aron Hammond on 07/05/15.
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
+//  note: Swipe to delete copied from source, couldn't retrieve link anymore
 
 import UIKit
 
@@ -36,17 +37,13 @@ class ChoosePlayerViewController: UITableViewController
         return cell
     }
     
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle
+    // enable editing
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
     {
-        return .Delete
+        return true
     }
     
-    override func setEditing(editing: Bool, animated: Bool)
-    {
-        super.setEditing(editing, animated: animated)
-        tableView!.setEditing(editing, animated: animated)
-    }
-    
+    // remove when delete is pressed
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
     {
         if editingStyle == .Delete
@@ -56,7 +53,7 @@ class ChoosePlayerViewController: UITableViewController
         }
     }
     
-    // pop view of navigation controller when an item is selected
+    // pop view of navigation controller and set player that was being choosen when an cell is selected
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         func setPlayer(number: Int)

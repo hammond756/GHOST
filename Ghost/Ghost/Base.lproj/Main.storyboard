@@ -85,8 +85,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startGame" destination="8o1-eM-07j" eventType="touchUpInside" id="QbC-UK-0Y6"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ArD-eu-WtG"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Start Game" id="THE-QL-qN2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nru-Tf-fu6">
@@ -179,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KdO-Dn-vQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="64"/>
+            <point key="canvasLocation" x="909" y="42"/>
         </scene>
         <!--Title-->
         <scene sceneID="Zo3-BU-a36">
@@ -263,10 +262,10 @@
                             <constraint firstItem="4J8-qA-xjM" firstAttribute="centerY" secondItem="RpA-Zm-oEx" secondAttribute="centerY" id="fy9-dG-6Zc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Player" id="WTC-ZM-2nx">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eVq-je-tBc">
+                    <navigationItem key="navigationItem" title="Add Player" id="Xtn-YG-u2p">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lAf-qW-3rZ">
                             <connections>
-                                <action selector="cancel:" destination="dal-k7-ae2" id="gVg-HZ-UuX"/>
+                                <action selector="cancel:" destination="dal-k7-ae2" id="pkb-Xz-EXb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

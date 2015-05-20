@@ -34,6 +34,7 @@ class GamePlayViewController: UIViewController {
         inputField.text = ""
     }
     
+    // updates dictionary and current word, checks for the end of a game and updates the view
     @IBAction func playLetter()
     {
         if let input = inputField.text
@@ -50,12 +51,14 @@ class GamePlayViewController: UIViewController {
         }
     }
     
+    // encode value of inputField when app is closed/moved to background
     override func encodeRestorableStateWithCoder(coder: NSCoder)
     {
         super.encodeRestorableStateWithCoder(coder)
         coder.encodeObject(inputField.text, forKey: "Input field")
     }
     
+    // decode value inputField and update the view
     override func decodeRestorableStateWithCoder(coder: NSCoder)
     {
         let defaults = NSUserDefaults.standardUserDefaults()

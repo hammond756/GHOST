@@ -8,6 +8,7 @@
 
 import UIKit
 
+// extension to change two properties with one method
 extension UILabel
 {
     func setProperties(text: String?, alpha: Float)

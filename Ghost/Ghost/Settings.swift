@@ -55,6 +55,7 @@ class Settings
         defaults.setObject(tempDict, forKey: "Players")
     }
     
+    // return a player from the list of players by giving a name as argument
     func searchForPlayer(name: String) -> Player?
     {
         for player in players

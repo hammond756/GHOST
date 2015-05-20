@@ -25,9 +25,11 @@ class HighscoreViewController: UIViewController
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
         
+        // label array for iteration
         labels = [(firstPlace, firstPlaceScore), (secondPlace, secondPlaceScore), (thirdPlace, thirdPlaceScore)]
         let size = highscores.getHighScoreList().count
         
+        // populate nameLabels and scoreLabels when possible
         for (i,(nameLabel, scoreLabel)) in enumerate(labels)
         {
             if i < size

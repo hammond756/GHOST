@@ -12,6 +12,7 @@ class Highscores
 {
     var settings = Settings.sharedInstance
     
+    // return list of players sorted by score
     func getHighScoreList() -> [Player]
     {
         var playersCopy = settings.players

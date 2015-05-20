@@ -29,27 +29,16 @@ class FinshedGameViewController: UIViewController
     
     @IBOutlet weak var winnerLabel: UILabel!
     
+    // pop to HomeScreenView and clear the players
     @IBAction func homeScreenSegue()
     {
         game.reset(clearDict: false, clearPlayers: true)
         navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    // pop to GamePlayView to restart game with same players
     @IBAction func replayWithSamePlayers()
     {
         navigationController?.popViewControllerAnimated(true)
     }
-    
-    override func encodeRestorableStateWithCoder(coder: NSCoder)
-    {
-        super.encodeRestorableStateWithCoder(coder)
-        coder.encodeObject(winnerLabel.text, forKey: "winner")
-    }
-    
-    override func decodeRestorableStateWithCoder(coder: NSCoder)
-    {
-        super.decodeRestorableStateWithCoder(coder)
-        winnerLabel.text = coder.decodeObjectForKey("winner") as? String
-    }
-    
 }
