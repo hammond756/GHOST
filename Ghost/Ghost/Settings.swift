@@ -5,6 +5,8 @@
 //  Created by Aron Hammond on 09/05/15.
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
+//  Description: Stores all the players that where added in the application,
+//  and information about the default language
 
 import Foundation
 

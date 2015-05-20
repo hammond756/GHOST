@@ -5,6 +5,8 @@
 //  Created by Aron Hammond on 13/04/15.
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
+//  Description: Game model, rules of the game are implemented here. It also
+//  contains game-specific information like the players and the current word fragment
 
 import Foundation
 

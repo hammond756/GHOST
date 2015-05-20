@@ -18,7 +18,7 @@ class HighscoreViewController: UIViewController
     @IBOutlet weak var thirdPlaceScore: UILabel!
     
     var labels = [(UILabel,UILabel)]()
-    var highscores = Highscores()
+    var highscores = HighscoreList()
     
     override func viewDidLoad()
     {
@@ -27,15 +27,15 @@ class HighscoreViewController: UIViewController
         
         // label array for iteration
         labels = [(firstPlace, firstPlaceScore), (secondPlace, secondPlaceScore), (thirdPlace, thirdPlaceScore)]
-        let size = highscores.getHighScoreList().count
+        let size = highscores.generate().count
         
         // populate nameLabels and scoreLabels when possible
         for (i,(nameLabel, scoreLabel)) in enumerate(labels)
         {
             if i < size
             {
-                nameLabel.text = highscores.getHighScoreList()[i].name
-                scoreLabel.text = String(highscores.getHighScoreList()[i].score)
+                nameLabel.text = highscores.generate()[i].name
+                scoreLabel.text = String(highscores.generate()[i].score)
             }
             else
             {

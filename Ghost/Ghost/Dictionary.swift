@@ -5,6 +5,7 @@
 //  Created by Aron Hammond on 13/04/15.
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
+//  Description: Handles all things related to the dictionary
 
 import Foundation
 
