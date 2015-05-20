@@ -51,6 +51,7 @@ class NewGameViewController: UIViewController {
         }
     }
     
+    // set the title of the ChoosePlayerViewController in case of segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if let cpvc = segue.destinationViewController as? ChoosePlayerViewController
@@ -65,6 +66,20 @@ class NewGameViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    // block segue to GamePlayViewController if one of either player's value is nil
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool
+    {
+        if identifier == "Start Game"
+        {
+            if game.players[0] == nil || game.players[1] == nil
+            {
+                return false
+            }
+        }
+        
+        return true
     }
     
     @IBAction func changeLanguage(sender: UIButton)

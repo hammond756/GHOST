@@ -54,10 +54,10 @@ class DictioraryTest
             let docs = dirs[0]
             let path = NSBundle.mainBundle().pathForResource(language, ofType: "txt")
             
-            if let dict = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
+            if let dictString = String(contentsOfFile: path!, encoding: NSUTF8StringEncoding, error: nil)
             {
-                dict.componentsSeparatedByString("\n")
-                defaults.setObject(dict, forKey: language)
+                var dictArray = split(dictString) {$0 == "\n"}
+                defaults.setObject(dictArray, forKey: language)
             }
         }
     }

@@ -28,9 +28,7 @@ class Settings
     {
         let newPlayer = Player(name: name, score: 0)
         players.append(newPlayer)
-        println("start")
         savePlayers()
-        println("klaar")
     }
     
     // converts a dictionary to an array of player instances
@@ -54,6 +52,19 @@ class Settings
         }
         
         defaults.setObject(tempDict, forKey: "Players")
+    }
+    
+    func searchForPlayer(name: String) -> Player?
+    {
+        for player in players
+        {
+            if player.name == name
+            {
+                return player
+            }
+        }
+        
+        return nil
     }
     
     // language is string with an uppercase first character

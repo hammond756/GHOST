@@ -59,12 +59,16 @@ class GamePlayViewController: UIViewController {
     {
         super.encodeRestorableStateWithCoder(coder)
         coder.encodeObject(inputField.text, forKey: "Input field")
+        game.saveState()
     }
     
-    override func decodeRestorableStateWithCoder(coder: NSCoder) {
+    override func decodeRestorableStateWithCoder(coder: NSCoder)
+    {
+        let defaults = NSUserDefaults.standardUserDefaults()
         super.decodeRestorableStateWithCoder(coder)
         let text = coder.decodeObjectForKey("Input field") as! String
         inputField.text = text
+        game.restoreState()
     }
     
     
