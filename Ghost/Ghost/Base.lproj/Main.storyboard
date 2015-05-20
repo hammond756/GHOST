@@ -508,8 +508,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPQ-hV-w43">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPQ-hV-w43">
                                 <rect key="frame" x="250" y="201" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="F9B-zq-fHQ"/>
+                                    <constraint firstAttribute="width" constant="100" id="eUU-GN-X4H"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -528,6 +532,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="BIX-7V-aBS" secondAttribute="centerX" id="08O-aX-9CT"/>
+                            <constraint firstAttribute="centerX" secondItem="qPQ-hV-w43" secondAttribute="centerX" id="7nh-dl-MF2"/>
+                            <constraint firstItem="qPQ-hV-w43" firstAttribute="top" secondItem="BIX-7V-aBS" secondAttribute="bottom" constant="10" id="Fmx-HT-jrG"/>
+                            <constraint firstItem="BIX-7V-aBS" firstAttribute="centerX" secondItem="qPQ-hV-w43" secondAttribute="centerX" id="LRs-mh-t88"/>
                             <constraint firstAttribute="centerY" secondItem="BIX-7V-aBS" secondAttribute="centerY" constant="117.5" id="WII-Vv-SnF"/>
                         </constraints>
                     </view>
