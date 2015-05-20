@@ -73,16 +73,15 @@ class Game
         }
     }
     
-    // saves game specific data to user defaults
+    // convert game specific data to a dictionary and write it to user defaults
     func saveState()
     {
         var gameModelData = [String: AnyObject]()
         let tempPlayers = convertPlayers(players)
         var defaults = NSUserDefaults.standardUserDefaults()
-        println("Saved: \(tempPlayers)")
-        gameModelData["Players"] = tempPlayers as AnyObject
-        gameModelData["Current Word"] = currentWord as AnyObject
-        gameModelData["Dictionary Subset"] = dictionary.subSet as AnyObject
+        gameModelData["Players"] = tempPlayers
+        gameModelData["Current Word"] = currentWord
+        gameModelData["Dictionary Subset"] = dictionary.subSet
         
         defaults.setObject(gameModelData, forKey: "Game Model Data")
     }
@@ -94,7 +93,6 @@ class Game
         if let let gameModelData = defaults.objectForKey("Game Model Data") as? [String: AnyObject]
         {
             let restoredPlayers = gameModelData["Players"] as! [String]
-            println("Restored: \(restoredPlayers)")
             for (i,player) in enumerate(restoredPlayers)
             {
                 players[i] = settings.searchForPlayer(player)
@@ -102,11 +100,11 @@ class Game
             }
             
             currentWord = gameModelData["Current Word"] as! String
-            println("Word: \(currentWord)")
             dictionary.subSet = gameModelData["Dictionary Subset"] as! [String]
         }
     }
     
+    // only save player names, Player object cannot be stored in NSUserDefaults
     private func convertPlayers(players: [Player?]) -> [String]
     {
         var tempPlayers = [String]()
@@ -118,8 +116,6 @@ class Game
             }
         }
         
-        print("in convert:")
-        println(tempPlayers)
         return tempPlayers
     }
 }

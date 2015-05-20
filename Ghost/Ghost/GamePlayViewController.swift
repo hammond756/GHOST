@@ -8,8 +8,8 @@
 
 import UIKit
 
-class GamePlayViewController: UIViewController {
-    
+class GamePlayViewController: UIViewController
+{
     // make sure the title in the UINavigationBar is correct on the first turn
     override func viewWillAppear(animated: Bool)
     {
@@ -66,10 +66,5 @@ class GamePlayViewController: UIViewController {
         let text = coder.decodeObjectForKey("Input field") as! String
         inputField.text = text
     }
-    
-    
-
-
-
 }
 
