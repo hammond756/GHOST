@@ -8,22 +8,27 @@
 
 import Foundation
 
-class DictioraryTest
+class DictionaryClass
 {
     // string arrays that will store the dictionary and the filtered dictionary
     var dict = [String]()
     var subSet = [String]()
-    var currentLanguage: String
+    var currentLanguage = ""
+    let settings = Settings.sharedInstance
     
     init()
     {
+        let language = settings.getDefaultLanguage()
+        checkForStoredDictionaries()
+        changeLanguage(language)
+    }
+    
+    // checks NSUserDefaults for dict arrays, if not present: read and split dict files
+    private func checkForStoredDictionaries()
+    {
         var defaults = NSUserDefaults.standardUserDefaults()
-        
-        // initialize stored property to silence compiler error
-        currentLanguage = ""
-        
         let languages = ["english", "dutch"]
-
+        
         // if no default is set, dictionaries have to be loaded in
         for language in languages
         {
@@ -32,14 +37,6 @@ class DictioraryTest
                 loadTextFile(language)
             }
         }
-
-        if defaults.stringForKey("Default Language") == nil
-        {
-            defaults.setValue("english", forKey: "Default Language")
-        }
-        
-        let defaultLanguage = defaults.stringForKey("Default Language")
-        changeLanguage(defaultLanguage!)
     }
     
     // reads dictionary text file to a string and splits it to store individual words in an array
@@ -80,17 +77,6 @@ class DictioraryTest
     func count() -> Int
     {
         return self.subSet.count
-    }
-    
-    // return the last word in the subSet
-    func result() -> String?
-    {
-        if count() == 1
-        {
-            return self.subSet[subSet.startIndex]
-        }
-        
-        return nil
     }
     
     // clear the subSet

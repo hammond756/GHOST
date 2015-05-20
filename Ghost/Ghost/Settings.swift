@@ -14,10 +14,7 @@ class Settings
     
     init()
     {
-        if let playersDict = defaults.dictionaryForKey("Players") as? [String: Int]
-        {
-            convertPlayers(playersDict)
-        }
+        convertPlayers()
     }
     
     var players = [Player]()
@@ -32,13 +29,17 @@ class Settings
     }
     
     // converts a dictionary to an array of player instances
-    private func convertPlayers(playersDict: [String: Int])
+    private func convertPlayers()
     {
-        for (name, score) in playersDict
+        if let playersDict = defaults.dictionaryForKey("Players") as? [String: Int]
         {
-            let tempPlayer = Player(name: name, score: score)
-            players.append(tempPlayer)
+            for (name, score) in playersDict
+            {
+                let tempPlayer = Player(name: name, score: score)
+                players.append(tempPlayer)
+            }
         }
+
     }
     
     // converts player array to a dictionary and stores it in NSUserDefaults
@@ -54,6 +55,7 @@ class Settings
         defaults.setObject(tempDict, forKey: "Players")
     }
     
+    // return player objects from players based on name
     func searchForPlayer(name: String) -> Player?
     {
         for player in players
@@ -65,6 +67,17 @@ class Settings
         }
         
         return nil
+    }
+    
+    // check if default is set (if not: set to english) and return it
+    func getDefaultLanguage() -> String
+    {
+        if defaults.stringForKey("Default Language") == nil
+        {
+            defaults.setValue("english", forKey: "Default Language")
+        }
+        
+        return defaults.stringForKey("Default Language")!
     }
     
     // language is string with an uppercase first character

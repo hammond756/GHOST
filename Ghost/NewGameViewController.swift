@@ -85,7 +85,7 @@ class NewGameViewController: UIViewController {
     @IBAction func changeLanguage(sender: UIButton)
     {
         let symbol = sender.currentTitle!
-        let flags = ["🇬🇧": "english", "🇳🇱": "dutch"]
+        let flags: Dictionary = ["🇬🇧": "english", "🇳🇱": "dutch"]
         
         game.dictionary.changeLanguage(flags[symbol]!)
         changeHighlightedFlag()

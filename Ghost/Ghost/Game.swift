@@ -11,37 +11,24 @@ import Foundation
 class Game 
 {
     // singleton pattern that allows the game instance to be shared between all controllers
-    // source: http://anthon.io/how-to-share-data-between-view-controllers-in-swift/
-    // updated implementation: https://github.com/hpique/SwiftSingleton
+    // source: https://github.com/hpique/SwiftSingleton
     static let sharedInstance = Game()
     
-    var dictionary = DictioraryTest()
     var settings = Settings.sharedInstance
-    
+    var dictionary = DictionaryClass()
     var currentWord = ""
     
     var players = [Player?](count: 2, repeatedValue: nil)
     
     // method that ads the guessed letter to the current word and checks  the dictionary
-    func guess (letter: String) -> String?
+    func guess (letter: String)
     {
-        // only accepts single character
-        if count(letter) > 1
+        // validate input, add letter tho the current wordfragment and update dictionary
+        if count(letter) == 1
         {
-            return nil
+            currentWord = currentWord + letter
+            dictionary.filter(currentWord.lowercaseString)
         }
-        
-        // extend wordfragment and filter the dictionary
-        currentWord = currentWord + letter
-        dictionary.filter(currentWord.lowercaseString)
-        
-        //
-        if let result = dictionary.result()
-        {
-            return result
-        }
-
-        return nil
     }
     
     // returns 0 for player 1 and 1 for player two
@@ -50,12 +37,13 @@ class Game
         return count(currentWord) % 2
     }
     
-    // returns the who last played a the move that ended the game
+    // returns the player that did not end the game
     func winner() -> Player?
     {
         return players[turn()]
     }
     
+    // checks on all conditions on which Ghost must end
     func ended() -> Bool
     {
         let minlength = 4
@@ -66,6 +54,7 @@ class Game
         return subStringNotInDict || completedWord
     }
     
+    // reset game specific variables
     func reset()
     {
         dictionary.reset()
@@ -104,7 +93,7 @@ class Game
         }
     }
     
-    func convertPlayers(players: [Player?]) -> [String]
+    private func convertPlayers(players: [Player?]) -> [String]
     {
         var tempPlayers = [String]()
         for player in players
