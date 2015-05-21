@@ -11,14 +11,14 @@ import UIKit
 
 class ChoosePlayerViewController: UITableViewController
 {
+    var game = Game.sharedInstance
+    var settings = Settings.sharedInstance
+    
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-    
-    var game = Game.sharedInstance
-    var settings = Settings.sharedInstance
     
     // specify the number of rows in the table view
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int

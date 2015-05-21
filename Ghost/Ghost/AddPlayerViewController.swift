@@ -16,8 +16,7 @@ class AddPlayerViewController: UIViewController
 
     @IBAction func addPlayer()
     {
-        let playerName = nameField.text
-        settings.addPlayer(playerName)
+        settings.addPlayer(nameField.text)
         navigationController?.popViewControllerAnimated(true)
     }
 

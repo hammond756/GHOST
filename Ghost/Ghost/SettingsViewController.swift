@@ -12,6 +12,7 @@ import UIKit
 class SettingsViewController: UIViewController
 {
     @IBOutlet weak var defaultLangauge: UIButton!
+    
     var defaults = NSUserDefaults.standardUserDefaults()
     let flags = ["english": "🇬🇧", "dutch": "🇳🇱"]
     let settings = Settings.sharedInstance
@@ -20,6 +21,7 @@ class SettingsViewController: UIViewController
     {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
         defaultLangauge.setTitle(flags[defaults.stringForKey("Default Language")!], forState: .Normal)
     }
 

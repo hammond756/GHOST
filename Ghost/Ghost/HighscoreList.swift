@@ -18,6 +18,7 @@ class HighscoreList
     {
         var playersCopy = settings.players
         playersCopy.sort({$0.score > $1.score})
+        
         return playersCopy
     }
         

@@ -11,17 +11,38 @@ import Foundation
 
 class DictionaryClass
 {
+    init()
+    {
+        checkForStoredDictionaries()
+        
+        let language = settings.getDefaultLanguage()
+        changeLanguage(language)
+    }
+    
     // string arrays that will store the full dictionary and the filtered dictionary
     var dict = [String]()
     var subSet = [String]()
     var currentLanguage = ""
     let settings = Settings.sharedInstance
     
-    init()
+    // language is a lowecase string 'english' or 'dutch'
+    func changeLanguage(language: String)
     {
-        let language = settings.getDefaultLanguage()
-        checkForStoredDictionaries()
-        changeLanguage(language)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        dict = defaults.objectForKey(language) as! [String]
+        currentLanguage = language
+    }
+    
+    // save words with prefix in the subSet
+    func filter(subString: String)
+    {
+        subSet = dict.filter() { $0.hasPrefix(subString) }
+    }
+    
+    // clear the subSet
+    func reset()
+    {
+        self.subSet = [String]()
     }
     
     // checks NSUserDefaults for dict arrays, if not present: read and split dict files
@@ -58,25 +79,5 @@ class DictionaryClass
                 defaults.setObject(dictArray, forKey: language)
             }
         }
-    }
-    
-    // language is a lowecase string 'english' or 'dutch'
-    func changeLanguage(language: String)
-    {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        dict = defaults.objectForKey(language) as! [String]
-        currentLanguage = language
-    }
-    
-    // save words with prefix in the subSet
-    func filter(subString: String)
-    {
-        subSet = dict.filter() { $0.hasPrefix(subString) }
-    }
-    
-    // clear the subSet
-    func reset()
-    {
-        self.subSet = [String]()
     }
 }

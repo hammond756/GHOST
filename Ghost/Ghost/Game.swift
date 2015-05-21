@@ -16,16 +16,15 @@ class Game
     // source: https://github.com/hpique/SwiftSingleton
     static let sharedInstance = Game()
     
-    var settings = Settings.sharedInstance
-    var dictionary = DictionaryClass()
-    var currentWord = ""
-    
-    var players = [Player?](count: 2, repeatedValue: nil)
-    
     init()
     {
         restoreState()
     }
+    
+    var settings = Settings.sharedInstance
+    var dictionary = DictionaryClass()
+    var currentWord = ""
+    var players = [Player?](count: 2, repeatedValue: nil)
     
     // method that ads the guessed letter to the current word and checks  the dictionary
     func guess (letter: String)
@@ -61,6 +60,23 @@ class Game
         return subStringNotInDict || completedWord
     }
     
+    
+    // only save player names (Player object cannot be stored in NSUserDefaults)
+    private func convertPlayers(players: [Player?]) -> [String]
+    {
+        var tempPlayers = [String]()
+        
+        for player in players
+        {
+            if let tempPlayer = player
+            {
+                tempPlayers.append(tempPlayer.name)
+            }
+        }
+        
+        return tempPlayers
+    }
+    
     // reset game specific variables
     func reset(clearDict: Bool = false, clearPlayers: Bool = false)
     {
@@ -69,6 +85,7 @@ class Game
             dictionary.reset()
             currentWord = ""
         }
+        
         if clearPlayers
         {
             players = [Player?](count: 2, repeatedValue: nil)
@@ -103,20 +120,5 @@ class Game
             currentWord = gameModelData["Current Word"] as! String
             dictionary.subSet = gameModelData["Dictionary Subset"] as! [String]
         }
-    }
-    
-    // only save player names, Player object cannot be stored in NSUserDefaults
-    private func convertPlayers(players: [Player?]) -> [String]
-    {
-        var tempPlayers = [String]()
-        for player in players
-        {
-            if let tempPlayer = player
-            {
-                tempPlayers.append(tempPlayer.name)
-            }
-        }
-        
-        return tempPlayers
     }
 }

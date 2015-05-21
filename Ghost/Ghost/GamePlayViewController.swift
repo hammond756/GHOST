@@ -12,22 +12,16 @@ class GamePlayViewController: UIViewController
 {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var letterField: UITextField!
+    
     var game = Game.sharedInstance
     
     // make sure the title in the UINavigationBar is correct on the first turn
     override func viewWillAppear(animated: Bool)
     {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+        
         updateScreen()
-    }
-
-    // updates view title, word fragment displayed and clears input field
-    func updateScreen()
-    {
-        title = game.players[game.currentPlayerIndex()]?.name
-        wordLabel.text = game.currentWord.capitalizedString
-        letterField.text = ""
     }
     
     // updates dictionary and current word, checks for the end of a game and updates the view
@@ -46,6 +40,14 @@ class GamePlayViewController: UIViewController
         }
     }
     
+    // updates view title, word fragment displayed and clears input field
+    func updateScreen()
+    {
+        title = game.players[game.currentPlayerIndex()]?.name
+        wordLabel.text = game.currentWord.capitalizedString
+        letterField.text = ""
+    }
+
     // encode value of inputField when app is closed/moved to background
     override func encodeRestorableStateWithCoder(coder: NSCoder)
     {

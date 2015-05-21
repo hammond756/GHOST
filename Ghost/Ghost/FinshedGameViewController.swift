@@ -10,24 +10,25 @@ import UIKit
 
 class FinshedGameViewController: UIViewController
 {
+    @IBOutlet weak var winnerLabel: UILabel!
+    
+    var game = Game.sharedInstance
+    var settings = Settings.sharedInstance
+    
     override func viewWillAppear(animated: Bool)
     {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         winnerLabel.text = game.winner().name
         settings.savePlayers()
         game.reset(clearDict: true)
     }
-    
-    var game = Game.sharedInstance
-    var settings = Settings.sharedInstance
-    
-    @IBOutlet weak var winnerLabel: UILabel!
     
     // pop to HomeScreenView and clear the players
     @IBAction func quitToHomeScreen()

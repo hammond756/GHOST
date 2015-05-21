@@ -26,6 +26,7 @@ class Settings
     {
         let newPlayer = Player(name: name, score: 0)
         players.append(newPlayer)
+        
         savePlayers()
     }
     

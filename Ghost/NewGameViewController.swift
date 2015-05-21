@@ -8,32 +8,21 @@
 
 import UIKit
 
-// extension to change two properties with one method
-extension UILabel
-{
-    func setProperties(text: String?, alpha: Float)
-    {
-        self.text = text
-        self.alpha = CGFloat(alpha)
-    }
-}
-
 class NewGameViewController: UIViewController
 {
-    
     @IBOutlet weak var player1Label: UILabel!
     @IBOutlet weak var player2Label: UILabel!
     @IBOutlet weak var englishButton: UIButton!
     @IBOutlet weak var dutchButton: UIButton!
-
     
     var game = Game.sharedInstance
     
     override func viewWillAppear(animated: Bool)
     {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        
         changeHighlightedFlag(game.dictionary.currentLanguage)
-        navigationController?.setNavigationBarHidden(false, animated: true)
         
         let labels = [player1Label, player2Label]
         
@@ -96,5 +85,15 @@ class NewGameViewController: UIViewController
         }
         
         flag == "english" ? switchHighlight(dutchButton, englishButton) : switchHighlight(englishButton, dutchButton)
+    }
+}
+
+// extension to change two properties with one method
+extension UILabel
+{
+    func setProperties(text: String?, alpha: Float)
+    {
+        self.text = text
+        self.alpha = CGFloat(alpha)
     }
 }
