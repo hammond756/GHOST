@@ -56,6 +56,7 @@ class ChoosePlayerViewController: UITableViewController
     // pop view of navigation controller and set player that was being choosen when an cell is selected
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        // helper function, only used inside this function
         func setPlayer(number: Int)
         {
             game.players[number - 1] = settings.players[indexPath.row]
@@ -77,6 +78,6 @@ class ChoosePlayerViewController: UITableViewController
     override func decodeRestorableStateWithCoder(coder: NSCoder)
     {
         super.decodeRestorableStateWithCoder(coder)
-        coder.decodeObjectForKey("Current Title")
+        title = coder.decodeObjectForKey("Current Title") as? String
     }
 }

@@ -58,8 +58,7 @@ class GamePlayViewController: UIViewController
     {
         let defaults = NSUserDefaults.standardUserDefaults()
         super.decodeRestorableStateWithCoder(coder)
-        let text = coder.decodeObjectForKey("Input field") as! String
-        letterField.text = text
+        letterField.text = coder.decodeObjectForKey("Input field") as? String
     }
 }
 

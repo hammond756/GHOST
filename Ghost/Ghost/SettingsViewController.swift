@@ -23,6 +23,7 @@ class SettingsViewController: UIViewController
         defaultLangauge.setTitle(flags[defaults.stringForKey("Default Language")!], forState: .Normal)
     }
 
+    // change default language and update view to show corresponding flag
     @IBAction func changeDefaultLanguage()
     {
         let current = defaults.stringForKey("Default Language")

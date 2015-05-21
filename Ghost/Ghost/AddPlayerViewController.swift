@@ -37,7 +37,6 @@ class AddPlayerViewController: UIViewController
     override func decodeRestorableStateWithCoder(coder: NSCoder)
     {
         super.decodeRestorableStateWithCoder(coder)
-        let name = coder.decodeObjectForKey("Input name") as! String
-        nameField.text = name
+        nameField.text = coder.decodeObjectForKey("Input name") as? String
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Aron Hammond on 09/05/15.
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
-//  Description: Stores all the players that where added in the application,
+//  Description: Stores all the players that are added in the application,
 //  and information about the default language
 
 import Foundation
@@ -22,7 +22,6 @@ class Settings
     var players = [Player]()
     var defaults = NSUserDefaults.standardUserDefaults()
     
-    // add player to the list of Player and the dictionary
     func addPlayer(name: String)
     {
         let newPlayer = Player(name: name, score: 0)
@@ -57,7 +56,7 @@ class Settings
         defaults.setObject(tempDict, forKey: "Players")
     }
     
-    // return a player from the list of players by giving a name as argument
+    // return a Player object from the list of players by giving a name (String) as argument
     func searchForPlayer(name: String) -> Player?
     {
         for player in players
@@ -82,7 +81,6 @@ class Settings
         return defaults.stringForKey("Default Language")!
     }
     
-    // language is string with an uppercase first character
     func setDefaultLanguage(language: String)
     {
         defaults.setValue(language, forKey: "Default Language")

@@ -88,6 +88,7 @@ class NewGameViewController: UIViewController
 
     private func changeHighlightedFlag(flag: String)
     {
+        // helper function, only used inside this function
         func switchHighlight(fromButton: UIButton, toButton: UIButton)
         {
             fromButton.alpha = 0.3
