@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1658" y="64"/>
+            <point key="canvasLocation" x="1592" y="42"/>
         </scene>
         <!--Players-->
         <scene sceneID="AtT-oU-rAc">
@@ -222,7 +222,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dgP-xx-E0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="780"/>
+            <point key="canvasLocation" x="909" y="780"/>
         </scene>
         <!--Add Player-->
         <scene sceneID="0SG-yS-YBK">
@@ -275,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkg-Nh-mXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="1548"/>
+            <point key="canvasLocation" x="909" y="1477"/>
         </scene>
         <!--Finshed Game View Controller-->
         <scene sceneID="dzy-1k-VKC">
@@ -354,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YcF-ny-xz2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2337" y="64"/>
+            <point key="canvasLocation" x="2295" y="42"/>
         </scene>
         <!--Highscores-->
         <scene sceneID="bGw-za-ema">
@@ -494,7 +494,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tq-Co-Kr1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="-636"/>
+            <point key="canvasLocation" x="909" y="-630"/>
         </scene>
         <!--Settings-->
         <scene sceneID="30n-wR-3He">
@@ -584,31 +584,6 @@
                                     <segue destination="8o1-eM-07j" kind="show" id="1wY-CP-uiS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niV-Vk-o7F">
-                                <rect key="frame" x="304" y="348" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="hl4-Tn-QUL"/>
-                                    <constraint firstAttribute="height" constant="100" id="thw-zh-yqb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
-                                <state key="normal" title="❓">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-xb-zCX">
-                                <rect key="frame" x="196" y="348" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="q3N-AB-hpw"/>
-                                    <constraint firstAttribute="width" constant="100" id="xnD-Bf-t1x"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
-                                <state key="normal" title="🏆">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Qbq-pO-HLR" kind="show" id="haa-Bh-ldb"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vo-Mw-T4u">
                                 <rect key="frame" x="304" y="240" width="100" height="100"/>
                                 <constraints>
@@ -624,26 +599,35 @@
                                     <segue destination="GN0-ir-4XV" kind="show" id="b30-e0-TIZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-xb-zCX">
+                                <rect key="frame" x="250" y="348" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="51F-ou-U2G"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="9KL-kl-cfJ"/>
+                                    <constraint firstAttribute="height" constant="100" id="yOz-VH-OUV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                <state key="normal" title="🏆">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Qbq-pO-HLR" kind="show" id="haa-Bh-ldb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hxv-xb-zCX" firstAttribute="top" secondItem="83H-dJ-44h" secondAttribute="bottom" constant="8" symbolic="YES" id="1zV-JP-ZNp"/>
                             <constraint firstItem="7vo-Mw-T4u" firstAttribute="baseline" secondItem="83H-dJ-44h" secondAttribute="firstBaseline" id="3Mj-JO-Wsh"/>
-                            <constraint firstItem="niV-Vk-o7F" firstAttribute="baseline" secondItem="hxv-xb-zCX" secondAttribute="firstBaseline" id="4Yi-ji-Hav"/>
-                            <constraint firstItem="niV-Vk-o7F" firstAttribute="leading" secondItem="7vo-Mw-T4u" secondAttribute="leading" id="5pf-fW-KvY"/>
                             <constraint firstItem="ti2-fk-ZUe" firstAttribute="top" secondItem="Ixc-ag-5H4" secondAttribute="bottom" constant="8" symbolic="YES" id="AUQ-f2-pWO"/>
-                            <constraint firstItem="niV-Vk-o7F" firstAttribute="leading" secondItem="hxv-xb-zCX" secondAttribute="trailing" constant="8" symbolic="YES" id="AuN-hZ-Gtq"/>
                             <constraint firstItem="7vo-Mw-T4u" firstAttribute="leading" secondItem="83H-dJ-44h" secondAttribute="trailing" constant="8" symbolic="YES" id="Ild-dQ-xSC"/>
-                            <constraint firstItem="hxv-xb-zCX" firstAttribute="top" secondItem="niV-Vk-o7F" secondAttribute="top" id="KY2-tw-ze9"/>
-                            <constraint firstItem="niV-Vk-o7F" firstAttribute="trailing" secondItem="7vo-Mw-T4u" secondAttribute="trailing" id="Kbg-7U-y89"/>
+                            <constraint firstItem="hxv-xb-zCX" firstAttribute="top" secondItem="7vo-Mw-T4u" secondAttribute="bottom" constant="8" symbolic="YES" id="TZy-Yk-U1x"/>
                             <constraint firstItem="ti2-fk-ZUe" firstAttribute="centerX" secondItem="CLp-7h-sYb" secondAttribute="centerX" id="Tyt-IK-eGQ"/>
                             <constraint firstItem="83H-dJ-44h" firstAttribute="top" secondItem="ti2-fk-ZUe" secondAttribute="bottom" constant="70" id="Xg8-ny-ANB"/>
-                            <constraint firstItem="hxv-xb-zCX" firstAttribute="baseline" secondItem="niV-Vk-o7F" secondAttribute="firstBaseline" id="a2F-DR-isz"/>
+                            <constraint firstItem="hxv-xb-zCX" firstAttribute="centerX" secondItem="ti2-fk-ZUe" secondAttribute="centerX" id="efj-eJ-OhJ"/>
                             <constraint firstItem="83H-dJ-44h" firstAttribute="leading" secondItem="CLp-7h-sYb" secondAttribute="leading" constant="196" id="nhi-JH-qkK"/>
                             <constraint firstItem="83H-dJ-44h" firstAttribute="baseline" secondItem="7vo-Mw-T4u" secondAttribute="firstBaseline" id="p1C-hv-IbJ"/>
                             <constraint firstItem="7vo-Mw-T4u" firstAttribute="top" secondItem="83H-dJ-44h" secondAttribute="top" id="qjh-uv-G9G"/>
                             <constraint firstItem="83H-dJ-44h" firstAttribute="centerX" secondItem="ti2-fk-ZUe" secondAttribute="centerX" constant="-54" id="v8i-MX-Bk3"/>
-                            <constraint firstItem="hxv-xb-zCX" firstAttribute="leading" secondItem="83H-dJ-44h" secondAttribute="leading" id="yuA-Xr-zbI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -655,7 +639,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5K-nj-NTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256" y="64"/>
+            <point key="canvasLocation" x="240" y="42"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QU8-26-2a3">
@@ -671,11 +655,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iEC-An-imR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433" y="64"/>
+            <point key="canvasLocation" x="-433" y="42"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="sMe-zd-ZUJ"/>
-        <segue reference="OfM-Bu-2Cm"/>
+        <segue reference="haa-Bh-ldb"/>
     </inferredMetricsTieBreakers>
 </document>
