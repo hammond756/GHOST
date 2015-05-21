@@ -2,7 +2,7 @@
 //  HomePageViewController.swift
 //  Ghost
 //
-//  Created by Aron Hammond on 07/05/15.
+//  Created by Aron Hammond | student number: 10437215
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
 //  Description: No real activity, segues are handled by the storyboard

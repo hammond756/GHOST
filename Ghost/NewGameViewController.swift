@@ -2,7 +2,7 @@
 //  NewGameViewController.swift
 //  Ghost
 //
-//  Created by Aron Hammond on 30/04/15.
+//  Created by Aron Hammond | student number: 10437215
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
 

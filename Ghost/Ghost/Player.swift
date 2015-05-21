@@ -2,7 +2,7 @@
 //  Player.swift
 //  Ghost
 //
-//  Created by Aron Hammond on 07/05/15.
+//  Created by Aron Hammond | student number: 10437215
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
 //  Description: Class that represents a player. A player has a score

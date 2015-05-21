@@ -2,7 +2,7 @@
 //  FinshedGameViewController.swift
 //  Ghost
 //
-//  Created by Aron Hammond on 01/05/15.
+//  Created by Aron Hammond | student number: 10437215
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
 

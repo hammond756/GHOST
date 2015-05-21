@@ -2,7 +2,7 @@
 //  Settings.swift
 //  Ghost
 //
-//  Created by Aron Hammond on 09/05/15.
+//  Created by Aron Hammond | student number: 10437215
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
 //  Description: Stores all the players that are added in the application,

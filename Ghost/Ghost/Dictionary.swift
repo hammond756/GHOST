@@ -2,10 +2,11 @@
 //  Dictionary.swift
 //  Ghost
 //
-//  Created by Aron Hammond on 13/04/15.
+//  Created by Aron Hammond | student number: 10437215
 //  Copyright (c) 2015 Aron Hammond. All rights reserved.
 //
-//  Description: Handles all things related to the dictionary
+//  Description: Handles all things related to the dictionary, including
+//  loading the raw text files into Arrays
 
 import Foundation
 

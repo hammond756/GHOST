@@ -56,6 +56,8 @@
                             <constraint firstAttribute="centerX" secondItem="T6g-lz-01h" secondAttribute="centerX" constant="-10.5" id="yYj-8u-3C7"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="letterField" destination="T6g-lz-01h" id="hc4-w8-UWX"/>
                         <outlet property="wordLabel" destination="QlF-6r-i9w" id="hxF-95-C9V"/>
