@@ -52,7 +52,7 @@ class GamePlayViewController: UIViewController
     override func encodeRestorableStateWithCoder(coder: NSCoder)
     {
         super.encodeRestorableStateWithCoder(coder)
-        coder.encodeObject(letterField.text, forKey: "Input field")
+        coder.encodeObject(letterField.text, forKey: "Input Field")
     }
     
     // decode value inputField and update the view
@@ -60,7 +60,7 @@ class GamePlayViewController: UIViewController
     {
         let defaults = NSUserDefaults.standardUserDefaults()
         super.decodeRestorableStateWithCoder(coder)
-        letterField.text = coder.decodeObjectForKey("Input field") as? String
+        letterField.text = coder.decodeObjectForKey("Input Field") as? String
     }
 }
 

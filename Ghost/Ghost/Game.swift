@@ -40,7 +40,8 @@ class Game
     // returns 0 for player 1 and 1 for player two
     func currentPlayerIndex() -> Int
     {
-        return count(currentWord) % 2
+        let numberOfPlayers = 2
+        return count(currentWord) % numberOfPlayers
     }
     
     // returns the player that did not end the game
